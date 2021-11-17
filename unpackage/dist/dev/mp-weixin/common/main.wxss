@@ -26,6 +26,22 @@
 /* 透明度 */
 /* 文章场景相关 */
 /* 注意要写在第一行，同时给style标签加入lang="scss"属性 */
+@font-face {
+  font-family: "iconfont"; /* Project id 2946376 */
+  src: url('//at.alicdn.com/t/font_2946376_khqu12l3dbq.woff2?t=1637159357956') format('woff2'),
+       url('//at.alicdn.com/t/font_2946376_khqu12l3dbq.woff?t=1637159357956') format('woff'),
+       url('//at.alicdn.com/t/font_2946376_khqu12l3dbq.ttf?t=1637159357956') format('truetype');
+}
+.iconfont {
+  font-family: "iconfont" !important;
+  font-size: 16px;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+.icon-caidan:before {
+  content: "\e790";
+}
 .u-relative,
 .u-rela {
   position: relative;

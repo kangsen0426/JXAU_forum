@@ -9,7 +9,7 @@
 		</view>
 
 
-		<u-tabbar :list="getTabBar" :mid-button="true"></u-tabbar>
+		<u-tabbar :list="getTabBar" :mid-button="true" active-color="#5098FF"></u-tabbar>
 	</view>
 </template>
 
