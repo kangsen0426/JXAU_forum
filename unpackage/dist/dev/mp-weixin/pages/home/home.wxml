@@ -1,0 +1,1 @@
+<view class="content data-v-92bb8f34"><view class="main data-v-92bb8f34"><scroll-view style="height:100%;" scroll-y="true" class="data-v-92bb8f34">home</scroll-view></view><u-tabbar vue-id="1da55560-1" list="{{getTabBar}}" mid-button="{{true}}" class="data-v-92bb8f34" bind:__l="__l"></u-tabbar></view>
