@@ -1,7 +1,7 @@
 <template>
 	<view class="content">
 		<view class="">
-			sdsd
+			sdsdgit 
 		</view>
 		<view class="main">
 			<scroll-view scroll-y="true" style="height: 100%;">
