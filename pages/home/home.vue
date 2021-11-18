@@ -1,13 +1,14 @@
 <template>
 	<view class="content">
-
-
+		<view class="">
+			sdsdgit 
+		</view>
 		<view class="main">
 			<scroll-view scroll-y="true" style="height: 100%;">
-				home
+				homedhjhfjdf
 			</scroll-view>
 		</view>
-
+     
 
 		<u-tabbar :list="getTabBar" :mid-button="true" active-color="#5098FF"></u-tabbar>
 	</view>
