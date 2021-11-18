@@ -28,9 +28,9 @@
 /* 注意要写在第一行，同时给style标签加入lang="scss"属性 */
 @font-face {
   font-family: "iconfont"; /* Project id 2946376 */
-  src: url('//at.alicdn.com/t/font_2946376_khqu12l3dbq.woff2?t=1637159357956') format('woff2'),
-       url('//at.alicdn.com/t/font_2946376_khqu12l3dbq.woff?t=1637159357956') format('woff'),
-       url('//at.alicdn.com/t/font_2946376_khqu12l3dbq.ttf?t=1637159357956') format('truetype');
+  src: url('//at.alicdn.com/t/font_2946376_kav3lontg2.woff2?t=1637234245757') format('woff2'),
+       url('//at.alicdn.com/t/font_2946376_kav3lontg2.woff?t=1637234245757') format('woff'),
+       url('//at.alicdn.com/t/font_2946376_kav3lontg2.ttf?t=1637234245757') format('truetype');
 }
 .iconfont {
   font-family: "iconfont" !important;
@@ -38,6 +38,30 @@
   font-style: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+.icon-xihuan2:before {
+  content: "\e63b";
+}
+.icon-xihuan1:before {
+  content: "\e63d";
+}
+.icon-weizhi:before {
+  content: "\e711";
+}
+.icon-fenxiang:before {
+  content: "\e606";
+}
+.icon-xiaoxi:before {
+  content: "\e817";
+}
+.icon-jinghao:before {
+  content: "\e701";
+}
+.icon-xianxingtubiaozhizuomoban-25:before {
+  content: "\e61c";
+}
+.icon-guanliyuan_guanliyuanliebiao:before {
+  content: "\e60f";
 }
 .icon-caidan:before {
   content: "\e790";

@@ -23,8 +23,12 @@
 
 
 			<swiper class="swiper" :current="tabs.current" @change="swiperchange">
-				<swiper-item v-for="(item,index) in tabsListData" :key='index'>
-					{{item.name}}
+				<swiper-item v-for="item1 in tabsListData" :key='item1.id'>
+					<scroll-list>
+						<view v-for="item2 in item1.list" :key="item2.id">
+							<diary-item :list="item2"></diary-item>
+						</view>
+					</scroll-list>
 				</swiper-item>
 			</swiper>
 
@@ -42,8 +46,13 @@
 		mapMutations,
 		mapGetters
 	} from 'vuex';
-
+	import scrollList from "../../components/scrolllist/scrolllist.vue"
+	import diaryItem from "../../components/diaryItem/diaryItem.vue"
 	export default {
+		components: {
+			scrollList,
+			diaryItem
+		},
 		data() {
 			return {
 				tabs: {
@@ -56,17 +65,59 @@
 					}],
 					current: 1
 				},
-				tabsListData:[
-					{
-						name:'关注'
+				tabsListData: [{
+						name: '关注',
+						id: 822,
+						list: [{
+								id: 561,
+								userid: 7821,
+								username: "ksks",
+								following: false,
+								circle:'美食',
+								comments:23,
+								commentsData:[],
+								avatar: "https://s3.bmp.ovh/imgs/2021/11/f0007619e29465d0.jpg",
+								badge: [],
+								content: "范家发为范家发为比办公空间不可被概括为对的范家发为比办对的范家发为比办对的范家发为比办对的范公空间不可被概括为比办公空范家发为范家发为比办公空间不可被概括为对的范家发为比办对的范家发为比办对的范家发为比办对的范公空间不可被概括为比办公空间不可被概括为间不可被概括为",
+								imgArray: [
+									"https://s3.bmp.ovh/imgs/2021/11/91650c5bd05e52d2.jpg",
+									"https://s3.bmp.ovh/imgs/2021/11/12628cf8aa4a62c7.jpg",
+									"https://s3.bmp.ovh/imgs/2021/11/e2598f87131a75db.png",
+									"https://s3.bmp.ovh/imgs/2021/11/6deded1a6fb9c0f9.png",
+									"https://s3.bmp.ovh/imgs/2021/11/f0007619e29465d0.jpg",
+									"https://s3.bmp.ovh/imgs/2021/11/ead26623c4006561.jpg",
+									"https://s3.bmp.ovh/imgs/2021/11/bf8fffd2a4f239ef.jpg"
+								]
+							}
+					 
+						]
 					},
 					{
-						name:'推荐'
+						name: '推荐',
+						id: 366,
+						list: [{
+							id: 684,
+							userid: 6347,
+							username: "ksks",
+							following: false,
+							circle:'美食',
+							comments:23,
+							commentsData:[],
+							avatar: "https://s3.bmp.ovh/imgs/2021/11/f0007619e29465d0.jpg",
+							badge: [],
+							content: "范家发为范家发为比办公空间不可被概括为对的范家发为比办对的范家发为比办对的范家发为比办对的范公空间不可被概括为比办公空间不可被概括为",
+							imgArray: [
+								"https://s3.bmp.ovh/imgs/2021/11/f0007619e29465d0.jpg"
+							]
+						}]
 					},
 					{
-						name:'热门'
+						name: '热门',
+						id: 9431,
+						list: []
 					}
-				]
+				],
+
 			}
 		},
 		onLoad() {
@@ -131,7 +182,7 @@
 					width: 100%;
 					height: 80rpx;
 					display: flex;
-					
+
 					// background-color: pink;
 
 					.left_tabs {

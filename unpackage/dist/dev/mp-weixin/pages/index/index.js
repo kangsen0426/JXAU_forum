@@ -202,12 +202,21 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 
 
 
-var _vuex = __webpack_require__(/*! vuex */ 13);function ownKeys(object, enumerableOnly) {var keys = Object.keys(object);if (Object.getOwnPropertySymbols) {var symbols = Object.getOwnPropertySymbols(object);if (enumerableOnly) symbols = symbols.filter(function (sym) {return Object.getOwnPropertyDescriptor(object, sym).enumerable;});keys.push.apply(keys, symbols);}return keys;}function _objectSpread(target) {for (var i = 1; i < arguments.length; i++) {var source = arguments[i] != null ? arguments[i] : {};if (i % 2) {ownKeys(Object(source), true).forEach(function (key) {_defineProperty(target, key, source[key]);});} else if (Object.getOwnPropertyDescriptors) {Object.defineProperties(target, Object.getOwnPropertyDescriptors(source));} else {ownKeys(Object(source)).forEach(function (key) {Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key));});}}return target;}function _defineProperty(obj, key, value) {if (key in obj) {Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true });} else {obj[key] = value;}return obj;}var _default =
+
+
+
+
+var _vuex = __webpack_require__(/*! vuex */ 13);function ownKeys(object, enumerableOnly) {var keys = Object.keys(object);if (Object.getOwnPropertySymbols) {var symbols = Object.getOwnPropertySymbols(object);if (enumerableOnly) symbols = symbols.filter(function (sym) {return Object.getOwnPropertyDescriptor(object, sym).enumerable;});keys.push.apply(keys, symbols);}return keys;}function _objectSpread(target) {for (var i = 1; i < arguments.length; i++) {var source = arguments[i] != null ? arguments[i] : {};if (i % 2) {ownKeys(Object(source), true).forEach(function (key) {_defineProperty(target, key, source[key]);});} else if (Object.getOwnPropertyDescriptors) {Object.defineProperties(target, Object.getOwnPropertyDescriptors(source));} else {ownKeys(Object(source)).forEach(function (key) {Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key));});}}return target;}function _defineProperty(obj, key, value) {if (key in obj) {Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true });} else {obj[key] = value;}return obj;}var scrollList = function scrollList() {__webpack_require__.e(/*! require.ensure | components/scrolllist/scrolllist */ "components/scrolllist/scrolllist").then((function () {return resolve(__webpack_require__(/*! ../../components/scrolllist/scrolllist.vue */ 111));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};var diaryItem = function diaryItem() {__webpack_require__.e(/*! require.ensure | components/diaryItem/diaryItem */ "components/diaryItem/diaryItem").then((function () {return resolve(__webpack_require__(/*! ../../components/diaryItem/diaryItem.vue */ 118));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};var _default =
+
 
 
 
 
 {
+  components: {
+    scrollList: scrollList,
+    diaryItem: diaryItem },
+
   data: function data() {
     return {
       tabs: {
@@ -220,15 +229,57 @@ var _vuex = __webpack_require__(/*! vuex */ 13);function ownKeys(object, enumera
 
         current: 1 },
 
-      tabsListData: [
-      {
-        name: '关注' },
+      tabsListData: [{
+        name: '关注',
+        id: 822,
+        list: [{
+          id: 561,
+          userid: 7821,
+          username: "ksks",
+          following: false,
+          circle: '美食',
+          comments: 23,
+          commentsData: [],
+          avatar: "https://s3.bmp.ovh/imgs/2021/11/f0007619e29465d0.jpg",
+          badge: [],
+          content: "范家发为范家发为比办公空间不可被概括为对的范家发为比办对的范家发为比办对的范家发为比办对的范公空间不可被概括为比办公空范家发为范家发为比办公空间不可被概括为对的范家发为比办对的范家发为比办对的范家发为比办对的范公空间不可被概括为比办公空间不可被概括为间不可被概括为",
+          imgArray: [
+          "https://s3.bmp.ovh/imgs/2021/11/91650c5bd05e52d2.jpg",
+          "https://s3.bmp.ovh/imgs/2021/11/12628cf8aa4a62c7.jpg",
+          "https://s3.bmp.ovh/imgs/2021/11/e2598f87131a75db.png",
+          "https://s3.bmp.ovh/imgs/2021/11/6deded1a6fb9c0f9.png",
+          "https://s3.bmp.ovh/imgs/2021/11/f0007619e29465d0.jpg",
+          "https://s3.bmp.ovh/imgs/2021/11/ead26623c4006561.jpg",
+          "https://s3.bmp.ovh/imgs/2021/11/bf8fffd2a4f239ef.jpg"] }] },
+
+
+
+
 
       {
-        name: '推荐' },
+        name: '推荐',
+        id: 366,
+        list: [{
+          id: 684,
+          userid: 6347,
+          username: "ksks",
+          following: false,
+          circle: '美食',
+          comments: 23,
+          commentsData: [],
+          avatar: "https://s3.bmp.ovh/imgs/2021/11/f0007619e29465d0.jpg",
+          badge: [],
+          content: "范家发为范家发为比办公空间不可被概括为对的范家发为比办对的范家发为比办对的范家发为比办对的范公空间不可被概括为比办公空间不可被概括为",
+          imgArray: [
+          "https://s3.bmp.ovh/imgs/2021/11/f0007619e29465d0.jpg"] }] },
+
+
 
       {
-        name: '热门' }] };
+        name: '热门',
+        id: 9431,
+        list: [] }] };
+
 
 
 
