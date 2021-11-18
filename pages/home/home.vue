@@ -1,7 +1,5 @@
 <template>
 	<view class="content">
-
-
 		<view class="main">
 			<scroll-view scroll-y="true" style="height: 100%;">
 				home
