@@ -1,0 +1,1 @@
+<view class="content data-v-32e87e5c"><u-navbar vue-id="2a27ce2a-1" title="详情" back-icon-color="#5098FF" class="data-v-32e87e5c" bind:__l="__l"></u-navbar><view class="main data-v-32e87e5c"><scroll-view style="height:100%;" scroll-y="true" class="data-v-32e87e5c">{{'文章详情 文章id '+contentID+''}}</scroll-view></view></view>

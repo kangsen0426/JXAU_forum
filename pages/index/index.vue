@@ -4,7 +4,7 @@
 		<!-- 自定义导航栏放这-->
 		<u-navbar :is-back="false">
 			<view class="slot-wrap">
-				<u-search class="index_search" :clearabled="true" :show-action="false" disabled></u-search>
+				<u-search class="index_search" :show-action="false" disabled @click="tosearchpage"></u-search>
 			</view>
 		</u-navbar>
 
@@ -15,7 +15,7 @@
 				<view class="left_tabs">
 					<u-tabs bar-width="20" :list="tabs.list" :current="tabs.current" @change="Tabschange"></u-tabs>
 				</view>
-				<view class="right_menu">
+				<view class="right_menu" @click="showpopup">
 					<i class="iconfont icon-caidan"></i>
 				</view>
 			</view>
@@ -26,13 +26,42 @@
 				<swiper-item v-for="item1 in tabsListData" :key='item1.id'>
 					<scroll-list>
 						<view v-for="item2 in item1.list" :key="item2.id">
-							<diary-item :list="item2"></diary-item>
+							<diary-item :list="item2" @togglelike="togglelike" @togglefolow="togglefolow"
+								@togglecollect="togglecollect" @report="report" @todetail="todetail" @checklocation="checklocation" @tocirclepage="tocirclepage" @touserdetail="userdetail"></diary-item>
 						</view>
 					</scroll-list>
 				</swiper-item>
 			</swiper>
 
-
+			<mypopup :show="popupshow" @hide='hidepopup'>
+				<view class="upper">
+					<scroll-view scroll-y="true" style="height: 100%;">
+						<view class="tags_wrap">
+							<view class="tags" v-for="(item,index) in tabs.list" :key="index" @click="deleteTag(index)">
+								<view class="txt">
+									{{item.name}}
+								</view>
+								<i class="iconfont icon-chacha"></i>
+							</view>
+						</view>
+						<u-empty v-if="tabs.list.length === 0" mode="list"></u-empty>
+					</scroll-view>
+				</view>
+				<view class="lower">
+					<scroll-view scroll-y="true" style="height: 100%;">
+						<view class="tags_wrap">
+							<view class="tags" v-for="(item,index) in tabslist" :key="index" @click="addTag(index)">
+								<view class="txt">
+									{{item.name}}
+								</view>
+								<i class="iconfont icon-jia"></i>
+							</view>
+						</view>
+						<u-empty v-if="tabs.list.length === 0" mode="list"></u-empty>
+					</scroll-view>
+				</view>
+			</mypopup>
+			<u-top-tips ref="uTips" :navbar-height="statusBarHeight + navbarHeight"></u-top-tips>
 
 		</view>
 
@@ -48,13 +77,20 @@
 	} from 'vuex';
 	import scrollList from "../../components/scrolllist/scrolllist.vue"
 	import diaryItem from "../../components/diaryItem/diaryItem.vue"
+	import mypopup from "../../components/mypopup/mypopup.vue"
 	export default {
 		components: {
 			scrollList,
-			diaryItem
+			diaryItem,
+			mypopup
 		},
 		data() {
 			return {
+				// 状态栏高度，H5中，此值为0，因为H5不可操作状态栏
+				statusBarHeight: uni.getSystemInfoSync().statusBarHeight,
+				// 导航栏内容区域高度，不包括状态栏高度在内
+				navbarHeight: 44,
+				popupshow: false,
 				tabs: {
 					list: [{
 						name: '关注'
@@ -65,6 +101,41 @@
 					}],
 					current: 1
 				},
+				tabslist: [{
+						name: '美食'
+					}, {
+						name: '电影'
+					}, {
+						name: '音乐'
+					}, {
+						name: '表白'
+					}, {
+						name: '数码相机'
+					}, {
+						name: '自行车'
+					}, {
+						name: '很长长长长长长长的一个tag'
+					}, {
+						name: '更长长长长长长长长长长长的一个tag'
+					},
+					{
+						name: '美食'
+					}, {
+						name: '电影'
+					}, {
+						name: '音乐'
+					}, {
+						name: '表白'
+					}, {
+						name: '数码相机'
+					}, {
+						name: '自行车'
+					}, {
+						name: '很长长长长长长长的一个tag'
+					}, {
+						name: '更长长长长长长长长长长长的一个tag'
+					}
+				],
 				tabsListData: [{
 						name: '关注',
 						id: 822,
@@ -73,9 +144,15 @@
 								userid: 7821,
 								username: "ksks",
 								following: false,
-								circle:'美食',
-								comments:23,
-								commentsData:[],
+								collect: false,
+								circle: '美食',
+								circleid:8113,
+								comments: 23,
+								commentsData: [],
+								location: {
+									longitude: 115.8587658,
+									latitude: 28.7591635,
+								},
 								avatar: "https://s3.bmp.ovh/imgs/2021/11/f0007619e29465d0.jpg",
 								badge: [],
 								content: "范家发为范家发为比办公空间不可被概括为对的范家发为比办对的范家发为比办对的范家发为比办对的范公空间不可被概括为比办公空范家发为范家发为比办公空间不可被概括为对的范家发为比办对的范家发为比办对的范家发为比办对的范公空间不可被概括为比办公空间不可被概括为间不可被概括为",
@@ -89,7 +166,7 @@
 									"https://s3.bmp.ovh/imgs/2021/11/bf8fffd2a4f239ef.jpg"
 								]
 							}
-					 
+
 						]
 					},
 					{
@@ -100,9 +177,15 @@
 							userid: 6347,
 							username: "ksks",
 							following: false,
-							circle:'美食',
-							comments:23,
-							commentsData:[],
+							collect: false,
+							circle: '美食',
+							circleid:81413,
+							comments: 23,
+							commentsData: [],
+							location: {
+								longitude: 115.8587658,
+								latitude: 28.7591635,
+							},
 							avatar: "https://s3.bmp.ovh/imgs/2021/11/f0007619e29465d0.jpg",
 							badge: [],
 							content: "范家发为范家发为比办公空间不可被概括为对的范家发为比办对的范家发为比办对的范家发为比办对的范公空间不可被概括为比办公空间不可被概括为",
@@ -135,7 +218,78 @@
 				//swiper 滑动切换
 				//同步tab 栏
 				this.tabs.current = e.detail.current
+			},
+			showpopup() {
+				console.log("ok")
+				this.popupshow = true
+			},
+			hidepopup() {
+				console.log("close")
+				this.popupshow = false
+			},
+			deleteTag(index) {
+
+				//假同步，没有处理轮播图  关注，推荐，热门 不能删除没处理
+
+				this.tabslist.push(this.tabs.list[index])
+				this.tabs.list.splice(index, 1);
+			},
+			addTag(index) {
+
+				this.tabs.list.push(this.tabslist[index])
+				this.tabslist.splice(index, 1);
+			},
+			togglelike(id) {
+
+				console.log("togglelike 文章id为 " + id)
+
+			},
+			togglefolow(id) {
+				console.log("togglefolow 用户id为 " + id)
+				this.$refs.uTips.show({
+					title: '关注/取消关注成功'
+				});
+
+			},
+			togglecollect(id) {
+				console.log("togglecollect 文章id为 " + id)
+				this.$refs.uTips.show({
+					title: '收藏/取消收藏成功'
+				});
+			},
+			report(id) {
+				console.log("report 举报 文章id为 " + id)
+			},
+			todetail(id) {
+				console.log("todetail 跳转文章详情 文章id为 " + id)
+
+				uni.navigateTo({
+					url: `../contentdetail/contentdetail?id=${id}`
+				})
+
+			},
+			checklocation(location){
+				uni.openLocation({
+					longitude:location.longitude,
+					latitude:location.latitude
+				})
+			},
+			tocirclepage(params){
+				uni.navigateTo({
+					url:`../circledetail/circledetail?id=${params.id}&name=${params.name}`
+				})
+			},
+			userdetail(id){
+				uni.navigateTo({
+					url:`../userdetail/userdetail?id=${id}`
+				})
+			},
+			tosearchpage(){
+				uni.navigateTo({
+					url:"../searchpage/searchpage"
+				})
 			}
+
 
 		},
 		computed: {
@@ -144,7 +298,7 @@
 	}
 </script>
 
-<style lang="less">
+<style lang="scss">
 	page {
 		width: 100%;
 		height: 100%;
@@ -164,7 +318,6 @@
 				/* flex: 1; */
 				/* 如果您想让slot内容与导航栏左右有空隙 */
 				padding: 0 30rpx;
-
 				.index_search {
 					width: 100%;
 				}
@@ -211,6 +364,108 @@
 					width: 100%;
 					height: 100%;
 					// background-color: pink;
+
+				}
+
+				.upper {
+					width: 100%;
+					height: 50%;
+					padding: 10rpx;
+
+					// background-color: pink;
+
+
+
+					.tags_wrap {
+						display: flex;
+						flex-wrap: wrap;
+
+						.tags {
+							// box-sizing: border-box;
+							padding: 10rpx 20rpx;
+							display: flex;
+							align-items: center;
+							border-radius: 30rpx;
+							font-size: 16rpx;
+							margin-right: 10rpx;
+							margin-bottom: 10rpx;
+							border: 1rpx solid rgba(0, 0, 0, 0.1);
+
+							&:active {
+								background-color: #FA3534;
+								color: #fff;
+
+								i {
+									color: #fff;
+								}
+							}
+
+							.txt {
+								max-width: 350rpx;
+								overflow: hidden;
+								text-overflow: ellipsis;
+								/* 超出省略号 */
+								white-space: nowrap;
+							}
+
+							i {
+								color: #FA3534;
+								margin-left: 15rpx;
+							}
+						}
+					}
+
+
+
+
+
+				}
+
+				.lower {
+					width: 100%;
+					height: 50%;
+					padding: 10rpx;
+					// background-color: yellow;
+
+					.tags_wrap {
+						display: flex;
+						flex-wrap: wrap;
+
+						.tags {
+							// box-sizing: border-box;
+							padding: 10rpx 20rpx;
+							display: flex;
+							align-items: center;
+							border-radius: 30rpx;
+							font-size: 16rpx;
+							margin-right: 10rpx;
+							margin-bottom: 10rpx;
+
+							border: 1rpx solid rgba(0, 0, 0, 0.1);
+
+							&:active {
+								background-color: #5098FF;
+								color: #fff;
+
+								i {
+									color: #fff;
+								}
+							}
+
+							.txt {
+								max-width: 350rpx;
+								overflow: hidden;
+								text-overflow: ellipsis;
+								/* 超出省略号 */
+								white-space: nowrap;
+							}
+
+							i {
+								color: #5098FF;
+								margin-left: 15rpx;
+							}
+						}
+					}
 
 				}
 			}

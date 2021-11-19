@@ -57,7 +57,7 @@
 	}
 </script>
 
-<style lang="less" scoped>
+<style lang="scss" scoped>
 	.scrolllist_wrap {
 		height: 100%;
 		width: 100%;

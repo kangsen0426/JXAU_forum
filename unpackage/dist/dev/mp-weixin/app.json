@@ -4,7 +4,11 @@
     "pages/circle/circle",
     "pages/add/add",
     "pages/message/message",
-    "pages/home/home"
+    "pages/home/home",
+    "pages/contentdetail/contentdetail",
+    "pages/circledetail/circledetail",
+    "pages/userdetail/userdetail",
+    "pages/searchpage/searchpage"
   ],
   "subPackages": [],
   "window": {
@@ -36,5 +40,6 @@
       }
     ]
   },
-  "usingComponents": {}
+  "usingComponents": {},
+  "sitemapLocation": "sitemap.json"
 }
