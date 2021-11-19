@@ -1,0 +1,16 @@
+page.data-v-90593874 {
+  width: 100%;
+  height: 100%;
+}
+page .content.data-v-90593874 {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+page .content .main.data-v-90593874 {
+  flex: 1;
+  overflow: hidden;
+  position: relative;
+}
+
