@@ -4,7 +4,7 @@
 		<!-- 自定义导航栏放这-->
 		<u-navbar :is-back="false">
 			<view class="slot-wrap">
-				<u-search class="index_search" :clearabled="true" :show-action="false" disabled></u-search>
+				<u-search class="index_search" :show-action="false" disabled @click="tosearchpage"></u-search>
 			</view>
 		</u-navbar>
 
@@ -27,7 +27,7 @@
 					<scroll-list>
 						<view v-for="item2 in item1.list" :key="item2.id">
 							<diary-item :list="item2" @togglelike="togglelike" @togglefolow="togglefolow"
-								@togglecollect="togglecollect" @report="report"></diary-item>
+								@togglecollect="togglecollect" @report="report" @todetail="todetail" @checklocation="checklocation" @tocirclepage="tocirclepage" @touserdetail="userdetail"></diary-item>
 						</view>
 					</scroll-list>
 				</swiper-item>
@@ -44,6 +44,7 @@
 								<i class="iconfont icon-chacha"></i>
 							</view>
 						</view>
+						<u-empty v-if="tabs.list.length === 0" mode="list"></u-empty>
 					</scroll-view>
 				</view>
 				<view class="lower">
@@ -56,6 +57,7 @@
 								<i class="iconfont icon-jia"></i>
 							</view>
 						</view>
+						<u-empty v-if="tabs.list.length === 0" mode="list"></u-empty>
 					</scroll-view>
 				</view>
 			</mypopup>
@@ -144,8 +146,13 @@
 								following: false,
 								collect: false,
 								circle: '美食',
+								circleid:8113,
 								comments: 23,
 								commentsData: [],
+								location: {
+									longitude: 115.8587658,
+									latitude: 28.7591635,
+								},
 								avatar: "https://s3.bmp.ovh/imgs/2021/11/f0007619e29465d0.jpg",
 								badge: [],
 								content: "范家发为范家发为比办公空间不可被概括为对的范家发为比办对的范家发为比办对的范家发为比办对的范公空间不可被概括为比办公空范家发为范家发为比办公空间不可被概括为对的范家发为比办对的范家发为比办对的范家发为比办对的范公空间不可被概括为比办公空间不可被概括为间不可被概括为",
@@ -172,8 +179,13 @@
 							following: false,
 							collect: false,
 							circle: '美食',
+							circleid:81413,
 							comments: 23,
 							commentsData: [],
+							location: {
+								longitude: 115.8587658,
+								latitude: 28.7591635,
+							},
 							avatar: "https://s3.bmp.ovh/imgs/2021/11/f0007619e29465d0.jpg",
 							badge: [],
 							content: "范家发为范家发为比办公空间不可被概括为对的范家发为比办对的范家发为比办对的范家发为比办对的范公空间不可被概括为比办公空间不可被概括为",
@@ -247,6 +259,35 @@
 			},
 			report(id) {
 				console.log("report 举报 文章id为 " + id)
+			},
+			todetail(id) {
+				console.log("todetail 跳转文章详情 文章id为 " + id)
+
+				uni.navigateTo({
+					url: `../contentdetail/contentdetail?id=${id}`
+				})
+
+			},
+			checklocation(location){
+				uni.openLocation({
+					longitude:location.longitude,
+					latitude:location.latitude
+				})
+			},
+			tocirclepage(params){
+				uni.navigateTo({
+					url:`../circledetail/circledetail?id=${params.id}&name=${params.name}`
+				})
+			},
+			userdetail(id){
+				uni.navigateTo({
+					url:`../userdetail/userdetail?id=${id}`
+				})
+			},
+			tosearchpage(){
+				uni.navigateTo({
+					url:"../searchpage/searchpage"
+				})
 			}
 
 
@@ -277,7 +318,6 @@
 				/* flex: 1; */
 				/* 如果您想让slot内容与导航栏左右有空隙 */
 				padding: 0 30rpx;
-
 				.index_search {
 					width: 100%;
 				}

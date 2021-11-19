@@ -1,0 +1,1 @@
+<view class="content data-v-7da06dc6"><u-navbar vue-id="366dcc00-1" title="用户" back-icon-color="#5098FF" class="data-v-7da06dc6" bind:__l="__l"></u-navbar><view class="main data-v-7da06dc6"><scroll-view style="height:100%;" scroll-y="true" class="data-v-7da06dc6">{{'用户详情 用户id '+userid+''}}</scroll-view></view></view>

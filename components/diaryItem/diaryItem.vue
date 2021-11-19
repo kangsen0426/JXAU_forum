@@ -2,10 +2,10 @@
 	<view class="daily_wrap">
 		<view class="top_wrap">
 			<view class="left">
-				<view class="user_avatar">
+				<view class="user_avatar" @click="touserdetail">
 					<u-image :src="list.avatar" height="100%" border-radius="50%"></u-image>
 				</view>
-				<view class="user_name">
+				<view class="user_name"  @click="touserdetail">
 					{{list.username}}
 				</view>
 				<view class="badge">
@@ -24,15 +24,15 @@
 				</view>
 			</view>
 		</view>
-		<view class="diary_content">
+		<view class="diary_content" @click="toContentDetail">
 			<view class="text_area">
-				<u-read-more :show-height="200" :toggle="true" text-indent="0">
+				<u-read-more :show-height="200" :toggle="true" text-indent="0" :shadow-style="shadowStyle">
 					<rich-text :nodes="list.content"></rich-text>
 				</u-read-more>
 			</view>
 			<view class="image_box">
 				<view v-if="index < 5" :class="['outer_box',list.imgArray.length === 1 ? 'outer_box_onlyone' : '']"
-					v-for="(item,index) in list.imgArray" :key="index" @click="previewimg(index)">
+					v-for="(item,index) in list.imgArray" :key="index" @click.stop="previewimg(index)">
 					<u-image :src="item" height="100%"></u-image>
 				</view>
 				<view v-if="list.imgArray.length >= 6" class="outer_box_verymore">
@@ -42,10 +42,10 @@
 		</view>
 		<view class="bottom">
 			<view class="tag_wrap">
-				<view class="bottom_tag location">
+				<view v-if="list.location.latitude" class="bottom_tag location" @click="looklocation">
 					<i class="iconfont icon-weizhi"></i>
 				</view>
-				<view class="bottom_tag">
+				<view class="bottom_tag" @click="tocircle">
 					<i class="iconfont icon-jinghao"></i>
 					{{list.circle}}
 				</view>
@@ -75,7 +75,13 @@
 		},
 		data() {
 			return {
-				popupshow: false
+				popupshow: false,
+				shadowStyle: {
+					backgroundImage: "linear-gradient(-180deg, rgba(255, 255, 255, 0) 0%, #fff 80%)",
+					paddingTop: "160rpx",
+					marginTop: "-160rpx"
+				}
+
 			};
 		},
 		methods: {
@@ -95,13 +101,29 @@
 			showoptions() {
 				this.popupshow = true
 			},
-			togglecollect(){
+			togglecollect() {
 				this.popupshow = false
 				this.$emit('togglecollect', this.list.id)
 			},
-			report(){
+			report() {
 				this.popupshow = false
 				this.$emit('report', this.list.id)
+			},
+			toContentDetail() {
+				this.$emit('todetail', this.list.id)
+			},
+			looklocation(){
+				this.$emit('checklocation', this.list.location)
+			},
+			tocircle(){
+				let params = {
+					id:this.list.circleid,
+					name:this.list.circle
+				}
+				this.$emit('tocirclepage', params)
+			},
+			touserdetail(){
+				this.$emit('touserdetail', this.list.userid)
 			}
 		}
 	}
@@ -293,21 +315,21 @@
 				}
 			}
 		}
-		
-		.option{
+
+		.option {
 			height: 120rpx;
 			text-align: center;
 			line-height: 120rpx;
 			font-weight: bold;
 			background-color: #fff;
 			border-bottom: 1rpx solid rgba(0, 0, 0, 0.1);
-			
-			&:active{
+
+			&:active {
 				background-color: rgba(0, 0, 0, 0.1);
 			}
 		}
-		
-		.option_last{
+
+		.option_last {
 			border: none;
 		}
 	}

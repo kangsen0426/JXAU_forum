@@ -47,7 +47,47 @@
 				"enablePullDownRefresh": false
 			}
 		}
-	],
+	    ,{
+            "path" : "pages/contentdetail/contentdetail",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "",
+				"navigationStyle": "custom",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+        ,{
+            "path" : "pages/circledetail/circledetail",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "",
+				"navigationStyle": "custom",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+        ,{
+            "path" : "pages/userdetail/userdetail",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "",
+				"navigationStyle": "custom",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+        ,{
+            "path" : "pages/searchpage/searchpage",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "",
+				"navigationStyle": "custom",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+    ],
 	
 	"globalStyle": {
 		"navigationBarTextStyle": "black",
