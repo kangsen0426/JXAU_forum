@@ -8,7 +8,8 @@
     "pages/contentdetail/contentdetail",
     "pages/circledetail/circledetail",
     "pages/userdetail/userdetail",
-    "pages/searchpage/searchpage"
+    "pages/searchpage/searchpage",
+    "pages/allcirclepage/allcirclepage"
   ],
   "subPackages": [],
   "window": {
@@ -40,6 +41,5 @@
       }
     ]
   },
-  "usingComponents": {},
-  "sitemapLocation": "sitemap.json"
+  "usingComponents": {}
 }

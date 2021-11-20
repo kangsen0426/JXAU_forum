@@ -115,6 +115,10 @@ page .content .main .search_hestory .search_scroll .history_list .history {
 }
 page .content .main .search_hestory .search_scroll .history_list .history .text {
   width: 80%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  /* 超出省略号 */
+  white-space: nowrap;
 }
 page .content .main .search_hestory .search_scroll .history_list .history .del {
   width: 20%;

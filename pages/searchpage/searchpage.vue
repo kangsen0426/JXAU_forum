@@ -238,6 +238,10 @@
 								
 								.text{
 									width: 80%;
+									overflow: hidden;
+									text-overflow: ellipsis;
+									/* 超出省略号 */
+									white-space: nowrap;
 								}
 								
 								.del{

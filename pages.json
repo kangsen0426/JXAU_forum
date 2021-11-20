@@ -87,6 +87,16 @@
             }
             
         }
+        ,{
+            "path" : "pages/allcirclepage/allcirclepage",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "",
+				"navigationStyle": "custom",
+                "enablePullDownRefresh": false
+            }
+            
+        }
     ],
 	
 	"globalStyle": {
