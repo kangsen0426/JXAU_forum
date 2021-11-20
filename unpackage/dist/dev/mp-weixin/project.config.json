@@ -24,8 +24,15 @@
       "list": []
     },
     "miniprogram": {
-      "current": -1,
-      "list": []
+      "current": 0,
+      "list": [
+        {
+          "name": "home",
+          "query": "",
+          "id": 0,
+          "pathName": "pages/home/home"
+        }
+      ]
     }
   }
 }
