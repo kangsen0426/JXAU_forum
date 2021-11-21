@@ -482,7 +482,7 @@
 							height: 100%;
 							display: flex;
 							border-radius: 20rpx;
-							background-color: rgba(0, 0, 0, 0.1);
+							background-color: rgba(207, 207, 207, 0.1);
 
 							.left {
 								width: 70%;
@@ -578,7 +578,7 @@
 									height: 90%;
 									display: flex;
 									border-radius: 20rpx;
-									background-color: rgba(0, 0, 0, 0.1);
+									background-color: rgba(207, 207, 207, 0.1);
 
 									.left {
 										width: 80%;

@@ -135,6 +135,8 @@ page .content .u-menu-wrap .right {
 }
 page .content .u-menu-wrap .right .name {
   width: 100%;
+  display: flex;
+  align-items: center;
   font-size: 28rpx;
   font-weight: bold;
 }

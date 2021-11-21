@@ -37,11 +37,20 @@
 *circle*
 
 *allcirclepage*
+
 + 
 + 11.21 16:20 完成所有圈子页面，完善事件处理。建圈功能未开发。
 + 
+
 *allcirclepage*
 
+*circledetail*
+
++ 
++ 11.21 22:45 基本完成圈子详情页面，完善事件处理。展示所有圈子成员未开发。修复动态组件的一个bug
++ 
+
+*circledetail*
 ### ks
 
 

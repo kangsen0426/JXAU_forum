@@ -184,7 +184,7 @@ page .content .main .swiper .circle_item_wrap .circle_item {
   height: 100%;
   display: flex;
   border-radius: 20rpx;
-  background-color: rgba(0, 0, 0, 0.1);
+  background-color: rgba(207, 207, 207, 0.1);
 }
 page .content .main .swiper .circle_item_wrap .circle_item .left {
   width: 70%;
@@ -262,7 +262,7 @@ page .content .main .swiper .follow_box .outer .follow_item_wrap .follow_item {
   height: 90%;
   display: flex;
   border-radius: 20rpx;
-  background-color: rgba(0, 0, 0, 0.1);
+  background-color: rgba(207, 207, 207, 0.1);
 }
 page .content .main .swiper .follow_box .outer .follow_item_wrap .follow_item .left {
   width: 80%;

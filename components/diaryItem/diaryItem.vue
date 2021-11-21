@@ -56,6 +56,7 @@
 				<i class="iconfont icon-xihuan1" @click="togglelike"></i>
 			</view>
 		</view>
+	
 		<u-popup v-model="popupshow" mode="bottom" border-radius="20">
 			<view class="option" @click="togglecollect">{{list.collect ? '取消收藏' : '收藏'}}</view>
 			<view class="option option_last" @click="report">举报</view>
@@ -255,7 +256,7 @@
 		}
 
 		.bottom {
-			height: 50rpx;
+			// height: 50rpx;
 			line-height: 50rpx;
 			display: flex;
 			flex-wrap: wrap;
@@ -263,6 +264,7 @@
 
 			.tag_wrap {
 				display: flex;
+				flex-wrap: wrap;
 
 				.bottom_tag {
 					box-sizing: border-box;
