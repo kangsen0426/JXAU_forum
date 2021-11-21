@@ -83,7 +83,7 @@ try {
       return __webpack_require__.e(/*! import() | node-modules/uview-ui/components/u-image/u-image */ "node-modules/uview-ui/components/u-image/u-image").then(__webpack_require__.bind(null, /*! uview-ui/components/u-image/u-image.vue */ 215))
     },
     uIcon: function() {
-      return __webpack_require__.e(/*! import() | node-modules/uview-ui/components/u-icon/u-icon */ "node-modules/uview-ui/components/u-icon/u-icon").then(__webpack_require__.bind(null, /*! uview-ui/components/u-icon/u-icon.vue */ 180))
+      return __webpack_require__.e(/*! import() | node-modules/uview-ui/components/u-icon/u-icon */ "node-modules/uview-ui/components/u-icon/u-icon").then(__webpack_require__.bind(null, /*! uview-ui/components/u-icon/u-icon.vue */ 194))
     },
     uReadMore: function() {
       return __webpack_require__.e(/*! import() | node-modules/uview-ui/components/u-read-more/u-read-more */ "node-modules/uview-ui/components/u-read-more/u-read-more").then(__webpack_require__.bind(null, /*! uview-ui/components/u-read-more/u-read-more.vue */ 222))

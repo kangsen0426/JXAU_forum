@@ -1,10 +1,11 @@
 <template>
 	<view class="content home">
 		<view class="fixed-bg"></view>
-		<view class="nav-tabbar">
+		<u-navbar  title="name" back-icon-name='scan' :background="{background:'rgba(0,0,0,0)'}" :border-bottom='false' back-icon-color='white' title-color='white'></u-navbar>
+<!-- 		<view class="nav-tabbar">
 			<u-icon name="scan" class='scan'></u-icon>
 		</view>
-
+ -->
 		<view class="main">
 			<scroll-view scroll-y="true" style="height: 100%;">
 				<view class="avatar">
@@ -42,7 +43,7 @@
 				<view class="card">
 					<view class="tabs">
 						<u-tabs :list="list" :is-scroll="false" :current="current" @change="change"
-							active-color="#000000"></u-tabs>
+							active-color="#5098FF"></u-tabs>
 					</view>
 
 
@@ -322,7 +323,7 @@
 				.btn-issue /deep/ button {
 					color: #333333;
 					width: 200rpx;
-					background-color: #333333;
+					background-color: $uni-color-primary;
 					color: white;
 				}
 			}

@@ -144,7 +144,7 @@ page {
 .content .card .card-main .btn-issue.data-v-92bb8f34 button {
   color: #333333;
   width: 200rpx;
-  background-color: #333333;
+  background-color: #5098FF;
   color: white;
 }
 
