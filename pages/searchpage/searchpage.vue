@@ -3,7 +3,7 @@
 
 		<u-navbar title="搜索" back-icon-color="#5098FF"></u-navbar>
 		<view class="slot-wrap">
-			<u-search class="index_search" :clearabled="true" v-model="search" @search="startSearch" @custom="startSearch"></u-search>
+			<u-search class="index_search" :animation="true" :clearabled="true" v-model="search" @search="startSearch" @custom="startSearch"></u-search>
 		</view>
 
 		<view class="main">

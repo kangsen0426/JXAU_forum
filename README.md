@@ -35,6 +35,13 @@
 + 
 
 *circle*
+
+*allcirclepage*
++ 
++ 11.21 16:20 完成所有圈子页面，完善事件处理。建圈功能未开发。
++ 
+*allcirclepage*
+
 ### ks
 
 

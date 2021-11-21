@@ -1,45 +1,46 @@
 {
-  "pages": [
-    "pages/index/index",
-    "pages/circle/circle",
-    "pages/add/add",
-    "pages/message/message",
-    "pages/home/home",
-    "pages/contentdetail/contentdetail",
-    "pages/circledetail/circledetail",
-    "pages/userdetail/userdetail",
-    "pages/searchpage/searchpage",
-    "pages/allcirclepage/allcirclepage"
-  ],
-  "subPackages": [],
-  "window": {
-    "navigationBarTextStyle": "black",
-    "navigationBarTitleText": "uni-app",
-    "navigationBarBackgroundColor": "#F8F8F8",
-    "backgroundColor": "#F8F8F8"
-  },
-  "tabBar": {
-    "color": "#909399",
-    "selectedColor": "#303133",
-    "backgroundColor": "#FFFFFF",
-    "borderStyle": "black",
-    "list": [
-      {
-        "pagePath": "pages/index/index"
-      },
-      {
-        "pagePath": "pages/circle/circle"
-      },
-      {
-        "pagePath": "pages/add/add"
-      },
-      {
-        "pagePath": "pages/message/message"
-      },
-      {
-        "pagePath": "pages/home/home"
-      }
-    ]
-  },
-  "usingComponents": {}
+    "pages": [
+        "pages/index/index",
+        "pages/circle/circle",
+        "pages/add/add",
+        "pages/message/message",
+        "pages/home/home",
+        "pages/contentdetail/contentdetail",
+        "pages/circledetail/circledetail",
+        "pages/userdetail/userdetail",
+        "pages/searchpage/searchpage",
+        "pages/allcirclepage/allcirclepage"
+    ],
+    "subPackages": [],
+    "window": {
+        "navigationBarTextStyle": "black",
+        "navigationBarTitleText": "uni-app",
+        "navigationBarBackgroundColor": "#F8F8F8",
+        "backgroundColor": "#F8F8F8"
+    },
+    "tabBar": {
+        "color": "#909399",
+        "selectedColor": "#303133",
+        "backgroundColor": "#FFFFFF",
+        "borderStyle": "black",
+        "list": [
+            {
+                "pagePath": "pages/index/index"
+            },
+            {
+                "pagePath": "pages/circle/circle"
+            },
+            {
+                "pagePath": "pages/add/add"
+            },
+            {
+                "pagePath": "pages/message/message"
+            },
+            {
+                "pagePath": "pages/home/home"
+            }
+        ]
+    },
+    "usingComponents": {},
+    "sitemapLocation": "sitemap.json"
 }

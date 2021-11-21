@@ -396,6 +396,8 @@ var _vuex = __webpack_require__(/*! vuex */ 13);function ownKeys(object, enumera
   },
   methods: _objectSpread({
     tosearchpage: function tosearchpage() {
+      uni.navigateTo({
+        url: "../allcirclepage/allcirclepage" });
 
     },
     tocircleDetail: function tocircleDetail(index) {

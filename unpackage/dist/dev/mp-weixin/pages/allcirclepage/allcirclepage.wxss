@@ -47,9 +47,109 @@ page .content .slot-wrap {
 page .content .slot-wrap .index_search {
   width: 100%;
 }
-page .content .main {
+page .content .u-menu-wrap {
   flex: 1;
+  display: flex;
   overflow: hidden;
+}
+page .content .u-menu-wrap .u-tab-view {
+  width: 200rpx;
+  height: 100%;
+}
+page .content .u-menu-wrap .u-tab-item {
+  height: 110rpx;
+  background: #f6f6f6;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 26rpx;
+  color: #444;
+  font-weight: 400;
+  line-height: 1;
+}
+page .content .u-menu-wrap .u-tab-item-active {
   position: relative;
+  color: #000;
+  font-size: 30rpx;
+  font-weight: 600;
+  background: #fff;
+}
+page .content .u-menu-wrap .u-tab-item-active::before {
+  content: "";
+  position: absolute;
+  border-left: 4px solid #2979ff;
+  height: 32rpx;
+  left: 0;
+  top: 39rpx;
+}
+page .content .u-menu-wrap .u-tab-view {
+  height: 100%;
+}
+page .content .u-menu-wrap .right-box {
+  background-color: #fafafa;
+}
+page .content .u-menu-wrap .page-view {
+  padding: 16rpx;
+}
+page .content .u-menu-wrap .class-item {
+  margin-bottom: 30rpx;
+  background-color: #fff;
+  padding: 16rpx;
+  border-radius: 8rpx;
+}
+page .content .u-menu-wrap .class-item:last-child {
+  min-height: 100vh;
+}
+page .content .u-menu-wrap .item-title {
+  font-size: 26rpx;
+  color: #303133;
+  font-weight: bold;
+}
+page .content .u-menu-wrap .item-menu-name {
+  font-weight: normal;
+  font-size: 24rpx;
+  color: #303133;
+}
+page .content .u-menu-wrap .item-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+page .content .u-menu-wrap .thumb-box {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 20rpx;
+}
+page .content .u-menu-wrap .item-menu-image {
+  width: 120rpx;
+  height: 120rpx;
+}
+page .content .u-menu-wrap .right {
+  width: calc(100% - 120rpx);
+  height: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  padding-left: 10rpx;
+}
+page .content .u-menu-wrap .right .name {
+  width: 100%;
+  font-size: 28rpx;
+  font-weight: bold;
+}
+page .content .u-menu-wrap .right .name ._i {
+  font-size: 28rpx;
+  margin-right: 8rpx;
+  color: #5098FF;
+}
+page .content .u-menu-wrap .right .info {
+  width: 100%;
+  font-size: 24rpx;
+}
+page .content .u-menu-wrap .right .desc {
+  width: 100%;
+  font-size: 24rpx;
+  color: #c7c7c7;
 }
 

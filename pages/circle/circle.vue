@@ -229,7 +229,9 @@
 		},
 		methods: {
 			tosearchpage() {
-
+				uni.navigateTo({
+					url: "../allcirclepage/allcirclepage"
+				})
 			},
 			tocircleDetail(index) {
 				uni.navigateTo({
