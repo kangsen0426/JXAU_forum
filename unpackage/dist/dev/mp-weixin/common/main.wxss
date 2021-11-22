@@ -28,9 +28,9 @@
 /* 注意要写在第一行，同时给style标签加入lang="scss"属性 */
 @font-face {
   font-family: "iconfont"; /* Project id 2946376 */
-  src: url('//at.alicdn.com/t/font_2946376_trual7lxwlq.woff2?t=1637398975664') format('woff2'),
-       url('//at.alicdn.com/t/font_2946376_trual7lxwlq.woff?t=1637398975664') format('woff'),
-       url('//at.alicdn.com/t/font_2946376_trual7lxwlq.ttf?t=1637398975664') format('truetype');
+  src: url('//at.alicdn.com/t/font_2946376_98xwje0yifo.woff2?t=1637540230633') format('woff2'),
+       url('//at.alicdn.com/t/font_2946376_98xwje0yifo.woff?t=1637540230633') format('woff'),
+       url('//at.alicdn.com/t/font_2946376_98xwje0yifo.ttf?t=1637540230633') format('truetype');
 }
 .iconfont {
   font-family: "iconfont" !important;
@@ -38,6 +38,21 @@
   font-style: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+.icon-huoyuebang:before {
+  content: "\e609";
+}
+.icon-huoyuebang1:before {
+  content: "\e60a";
+}
+.icon-huoyuebang2:before {
+  content: "\e60b";
+}
+.icon-huoyuebang3:before {
+  content: "\e60c";
+}
+.icon-huoyuebang4:before {
+  content: "\e60d";
 }
 .icon-dengji-C:before {
   content: "\e604";

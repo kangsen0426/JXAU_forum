@@ -118,13 +118,13 @@ try {
       return Promise.all(/*! import() | node-modules/uview-ui/components/u-tabs/u-tabs */[__webpack_require__.e("common/vendor"), __webpack_require__.e("node-modules/uview-ui/components/u-tabs/u-tabs")]).then(__webpack_require__.bind(null, /*! uview-ui/components/u-tabs/u-tabs.vue */ 140))
     },
     uPopup: function() {
-      return __webpack_require__.e(/*! import() | node-modules/uview-ui/components/u-popup/u-popup */ "node-modules/uview-ui/components/u-popup/u-popup").then(__webpack_require__.bind(null, /*! uview-ui/components/u-popup/u-popup.vue */ 238))
+      return __webpack_require__.e(/*! import() | node-modules/uview-ui/components/u-popup/u-popup */ "node-modules/uview-ui/components/u-popup/u-popup").then(__webpack_require__.bind(null, /*! uview-ui/components/u-popup/u-popup.vue */ 217))
     },
     uTopTips: function() {
       return __webpack_require__.e(/*! import() | node-modules/uview-ui/components/u-top-tips/u-top-tips */ "node-modules/uview-ui/components/u-top-tips/u-top-tips").then(__webpack_require__.bind(null, /*! uview-ui/components/u-top-tips/u-top-tips.vue */ 161))
     },
     safeFooter: function() {
-      return __webpack_require__.e(/*! import() | components/safe-footer/safe-footer */ "components/safe-footer/safe-footer").then(__webpack_require__.bind(null, /*! @/components/safe-footer/safe-footer.vue */ 282))
+      return __webpack_require__.e(/*! import() | components/safe-footer/safe-footer */ "components/safe-footer/safe-footer").then(__webpack_require__.bind(null, /*! @/components/safe-footer/safe-footer.vue */ 224))
     }
   }
 } catch (e) {
@@ -181,7 +181,10 @@ __webpack_require__.r(__webpack_exports__);
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var diaryItem = function diaryItem() {__webpack_require__.e(/*! require.ensure | components/diaryItem/diaryItem */ "components/diaryItem/diaryItem").then((function () {return resolve(__webpack_require__(/*! ../../components/diaryItem/diaryItem.vue */ 182));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};var safeFooter = function safeFooter() {__webpack_require__.e(/*! require.ensure | components/safe-footer/safe-footer */ "components/safe-footer/safe-footer").then((function () {return resolve(__webpack_require__(/*! ../../components/safe-footer/safe-footer.vue */ 282));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};var _default =
+/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var diaryItem = function diaryItem() {__webpack_require__.e(/*! require.ensure | components/diaryItem/diaryItem */ "components/diaryItem/diaryItem").then((function () {return resolve(__webpack_require__(/*! ../../components/diaryItem/diaryItem.vue */ 182));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};var memberList = function memberList() {__webpack_require__.e(/*! require.ensure | components/memberlist/memberlist */ "components/memberlist/memberlist").then((function () {return resolve(__webpack_require__(/*! ../../components/memberlist/memberlist.vue */ 286));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};var safeFooter = function safeFooter() {__webpack_require__.e(/*! require.ensure | components/safe-footer/safe-footer */ "components/safe-footer/safe-footer").then((function () {return resolve(__webpack_require__(/*! ../../components/safe-footer/safe-footer.vue */ 224));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};var _default =
+
+
+
 
 
 
@@ -279,6 +282,7 @@ __webpack_require__.r(__webpack_exports__);
 {
   components: {
     diaryItem: diaryItem,
+    memberList: memberList,
     safeFooter: safeFooter },
 
   data: function data() {
@@ -306,14 +310,29 @@ __webpack_require__.r(__webpack_exports__);
         imgUrl: "https://s3.bmp.ovh/imgs/2021/11/e2598f87131a75db.png" },
 
       {
-        id: 1121,
+        id: 1821,
         name: "ks",
         imgUrl: "https://s3.bmp.ovh/imgs/2021/11/6deded1a6fb9c0f9.png" },
 
       {
         id: 1212,
         name: "ks",
-        imgUrl: "https://s3.bmp.ovh/imgs/2021/11/91650c5bd05e52d2.jpg" }],
+        imgUrl: "https://s3.bmp.ovh/imgs/2021/11/91650c5bd05e52d2.jpg" },
+
+      {
+        id: 121,
+        name: "ks",
+        imgUrl: "https://s3.bmp.ovh/imgs/2021/11/12628cf8aa4a62c7.jpg" },
+
+      {
+        id: 12151,
+        name: "案说法哈佛爱上了发给你按键",
+        imgUrl: "https://s3.bmp.ovh/imgs/2021/11/e2598f87131a75db.png" },
+
+      {
+        id: 1721,
+        name: "ks",
+        imgUrl: "https://s3.bmp.ovh/imgs/2021/11/6deded1a6fb9c0f9.png" }],
 
 
       tabslist: {

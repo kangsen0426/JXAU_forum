@@ -54,6 +54,10 @@ page .content .main {
 page .content .main .top_img_wrap {
   height: 280rpx;
 }
+page .content .main .info_wrap {
+  -webkit-transform: translateY(-20rpx);
+          transform: translateY(-20rpx);
+}
 page .content .main .info_wrap .top_box {
   height: 90rpx;
   width: 100%;

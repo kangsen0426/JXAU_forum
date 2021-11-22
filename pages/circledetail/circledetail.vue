@@ -41,7 +41,7 @@
 					<view class="circle_member">
 						<view class="title">成员</view>
 						<view class="list">
-							<view class="item_wrap" v-for="(item,index) in listData" :key="item.id">
+							<view class="item_wrap" v-if="index < 5" v-for="(item,index) in listData" :key="item.id">
 								<view class="item">
 									<u-image width="100%" height="100%" :src="item.imgUrl" border-radius="50%">
 									</u-image>
@@ -80,7 +80,9 @@
 
 			</scroll-view>
 			<u-popup v-model="membershow" mode="bottom" height="60%" border-radius="20">
-				<view>成员列表</view>
+				<view style="height: 100%;">
+					<member-list :list="listData"></member-list>
+				</view>
 			</u-popup>
 			<u-top-tips ref="uTips" :navbar-height="statusBarHeight + navbarHeight"></u-top-tips>
 		</view>
@@ -92,10 +94,12 @@
 
 <script>
 	import diaryItem from "../../components/diaryItem/diaryItem.vue"
+	import memberList from "../../components/memberlist/memberlist.vue"
 	import safeFooter from "../../components/safe-footer/safe-footer.vue"
 	export default {
 		components: {
 			diaryItem,
+			memberList,
 			safeFooter
 		},
 		data() {
@@ -106,7 +110,7 @@
 				navbarHeight: 44,
 				circleID: '',
 				circle: '',
-				membershow:false,
+				membershow: false,
 				listData: [{
 						id: 12121,
 						name: "ks",
@@ -123,7 +127,7 @@
 						imgUrl: "https://s3.bmp.ovh/imgs/2021/11/e2598f87131a75db.png"
 					},
 					{
-						id: 1121,
+						id: 1821,
 						name: "ks",
 						imgUrl: "https://s3.bmp.ovh/imgs/2021/11/6deded1a6fb9c0f9.png"
 					},
@@ -131,6 +135,21 @@
 						id: 1212,
 						name: "ks",
 						imgUrl: "https://s3.bmp.ovh/imgs/2021/11/91650c5bd05e52d2.jpg"
+					},
+					{
+						id: 121,
+						name: "ks",
+						imgUrl: "https://s3.bmp.ovh/imgs/2021/11/12628cf8aa4a62c7.jpg"
+					},
+					{
+						id: 12151,
+						name: "案说法哈佛爱上了发给你按键",
+						imgUrl: "https://s3.bmp.ovh/imgs/2021/11/e2598f87131a75db.png"
+					},
+					{
+						id: 1721,
+						name: "ks",
+						imgUrl: "https://s3.bmp.ovh/imgs/2021/11/6deded1a6fb9c0f9.png"
 					}
 				],
 				tabslist: {
@@ -328,7 +347,7 @@
 				.info_wrap {
 					// padding: 20rpx;
 					// height: 60rpx;
-					// transform: translateY(-20rpx);
+					transform: translateY(-20rpx);
 
 					.top_box {
 						height: 90rpx;

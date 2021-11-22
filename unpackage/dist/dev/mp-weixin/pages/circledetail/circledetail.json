@@ -9,6 +9,7 @@
     "u-popup": "/node-modules/uview-ui/components/u-popup/u-popup",
     "u-top-tips": "/node-modules/uview-ui/components/u-top-tips/u-top-tips",
     "safe-footer": "/components/safe-footer/safe-footer",
-    "diary-item": "/components/diaryItem/diaryItem"
+    "diary-item": "/components/diaryItem/diaryItem",
+    "member-list": "/components/memberlist/memberlist"
   }
 }
