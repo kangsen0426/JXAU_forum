@@ -236,7 +236,7 @@ var _vuex = __webpack_require__(/*! vuex */ 13);function ownKeys(object, enumera
   methods: {
     chart: function chart(item) {
       uni.navigateTo({
-        url: "../chatRoom/chatRoom?id=".concat(item.id, "&name=").concat(item.name) });
+        url: "../chatRoom/chatRoom?id=".concat(item.id, "&name=").concat(item.name, "&type=").concat(item.type) });
 
     } },
 

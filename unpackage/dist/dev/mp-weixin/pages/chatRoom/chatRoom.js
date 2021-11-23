@@ -267,6 +267,7 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
   onLoad: function onLoad(option) {
     this.target.id = option.id;
     this.target.name = option.name;
+    this.target.type = option.type;
 
     console.log(option.id, option.name);
 

@@ -1,0 +1,1 @@
+<view class="content"><u-navbar vue-id="65f6c0ea-1" is-back="{{true}}" back-icon-color="#5098FF" title="xsx写" title-color="#000" bind:__l="__l"></u-navbar><view class="main"></view></view>

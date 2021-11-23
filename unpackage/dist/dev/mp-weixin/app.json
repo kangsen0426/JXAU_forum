@@ -10,7 +10,8 @@
     "pages/userdetail/userdetail",
     "pages/searchpage/searchpage",
     "pages/allcirclepage/allcirclepage",
-    "pages/chatRoom/chatRoom"
+    "pages/chatRoom/chatRoom",
+    "pages/chatRoomXSX/chatRoomXSX"
   ],
   "subPackages": [],
   "window": {

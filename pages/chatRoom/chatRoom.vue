@@ -10,7 +10,7 @@
 				scroll-with-animation :scroll-into-view="scrollToView" refresher-enabled refresher-default-style="none"
 				:refresher-threshold='30' @refresherrestore="refresherrestore" :refresher-triggered="refresherTriggered"
 				@refresherrefresh="refresherrefresh">
-				<view class="system_chat_wrap" v-if="target.type === 0">
+				<view class="system_chat_wrap" v-if="target.type == 0">
 					<view class="item">
 						<view class="time"><span>23:01</span></view>
 						<view class="desc">
@@ -21,8 +21,8 @@
 						</view>
 					</view>
 				</view>
-				<!-- v-if="target.type === 1" -->
-				<view class="chat_list">
+				
+				<view class="chat_list" v-if="target.type == 1">
 					<view class="item_wrap" v-for="(item,index) in messageList" :key="item.messageid"
 						:id="'msg'+item.messageid">
 						<view class="time" v-if="item.showtime">
@@ -106,6 +106,7 @@
 		onLoad(option) {
 			this.target.id = option.id;
 			this.target.name = option.name;
+			this.target.type = option.type;
 
 			console.log(option.id, option.name)
 

@@ -75,7 +75,7 @@
 		methods: {
 			chart(item){
 				uni.navigateTo({
-					url:`../chatRoom/chatRoom?id=${item.id}&name=${item.name}`
+					url:`../chatRoom/chatRoom?id=${item.id}&name=${item.name}&type=${item.type}`
 				})
 			}
 		},
