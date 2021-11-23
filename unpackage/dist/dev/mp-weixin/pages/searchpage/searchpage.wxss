@@ -111,7 +111,7 @@ page .content .main .search_hestory .search_scroll .history_list .history {
   padding: 0 20rpx;
   display: flex;
   align-items: center;
-  border-bottom: 1rpx solid rgba(0, 0, 0, 0.1);
+  border-bottom: 1rpx solid rgba(188, 188, 188, 0.4);
 }
 page .content .main .search_hestory .search_scroll .history_list .history .text {
   width: 80%;

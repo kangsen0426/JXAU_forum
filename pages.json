@@ -97,6 +97,17 @@
             }
             
         }
+       
+        ,{
+            "path" : "pages/chatRoom/chatRoom",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "",
+				"navigationStyle": "custom",
+                "enablePullDownRefresh": false
+            }
+            
+        }
     ],
 	
 	"globalStyle": {

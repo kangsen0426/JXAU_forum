@@ -28,9 +28,9 @@
 /* 注意要写在第一行，同时给style标签加入lang="scss"属性 */
 @font-face {
   font-family: "iconfont"; /* Project id 2946376 */
-  src: url('//at.alicdn.com/t/font_2946376_98xwje0yifo.woff2?t=1637540230633') format('woff2'),
-       url('//at.alicdn.com/t/font_2946376_98xwje0yifo.woff?t=1637540230633') format('woff'),
-       url('//at.alicdn.com/t/font_2946376_98xwje0yifo.ttf?t=1637540230633') format('truetype');
+  src: url('//at.alicdn.com/t/font_2946376_0ew1bb3vk40q.woff2?t=1637543335370') format('woff2'),
+       url('//at.alicdn.com/t/font_2946376_0ew1bb3vk40q.woff?t=1637543335370') format('woff'),
+       url('//at.alicdn.com/t/font_2946376_0ew1bb3vk40q.ttf?t=1637543335370') format('truetype');
 }
 .iconfont {
   font-family: "iconfont" !important;
@@ -38,6 +38,15 @@
   font-style: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+.icon-xitongtongzhi:before {
+  content: "\e6cc";
+}
+.icon-xiaoxi1:before {
+  content: "\e61e";
+}
+.icon-xiaoxi2:before {
+  content: "\e63e";
 }
 .icon-huoyuebang:before {
   content: "\e609";

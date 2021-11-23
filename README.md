@@ -52,6 +52,14 @@
 + 
 
 *circledetail*
+
+*chatRoom*
+
++ 
++ 11.23 22:50 完成聊天室布局，功能基本完成，有很多BUG。空格表情不能发出去等等，发图片发视频没处理等等。textarea文字溢出。消息时间的处理逻辑有点问题。改麻了![](README_files/1.jpg) 
++ 
+
+*chatRoom*
 ### ks
 
 
