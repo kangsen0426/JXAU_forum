@@ -96,7 +96,13 @@ var components
 try {
   components = {
     uNavbar: function() {
-      return __webpack_require__.e(/*! import() | node-modules/uview-ui/components/u-navbar/u-navbar */ "node-modules/uview-ui/components/u-navbar/u-navbar").then(__webpack_require__.bind(null, /*! uview-ui/components/u-navbar/u-navbar.vue */ 134))
+      return __webpack_require__.e(/*! import() | node-modules/uview-ui/components/u-navbar/u-navbar */ "node-modules/uview-ui/components/u-navbar/u-navbar").then(__webpack_require__.bind(null, /*! uview-ui/components/u-navbar/u-navbar.vue */ 142))
+    },
+    uImage: function() {
+      return __webpack_require__.e(/*! import() | node-modules/uview-ui/components/u-image/u-image */ "node-modules/uview-ui/components/u-image/u-image").then(__webpack_require__.bind(null, /*! uview-ui/components/u-image/u-image.vue */ 205))
+    },
+    uTopTips: function() {
+      return __webpack_require__.e(/*! import() | node-modules/uview-ui/components/u-top-tips/u-top-tips */ "node-modules/uview-ui/components/u-top-tips/u-top-tips").then(__webpack_require__.bind(null, /*! uview-ui/components/u-top-tips/u-top-tips.vue */ 177))
     }
   }
 } catch (e) {
@@ -153,7 +159,7 @@ __webpack_require__.r(__webpack_exports__);
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;
+/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var diaryItem = function diaryItem() {__webpack_require__.e(/*! require.ensure | components/diaryItem/diaryItem */ "components/diaryItem/diaryItem").then((function () {return resolve(__webpack_require__(/*! ../../components/diaryItem/diaryItem.vue */ 198));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};var _default =
 
 
 
@@ -170,25 +176,188 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 
 
 
-var _vuex = __webpack_require__(/*! vuex */ 13);function ownKeys(object, enumerableOnly) {var keys = Object.keys(object);if (Object.getOwnPropertySymbols) {var symbols = Object.getOwnPropertySymbols(object);if (enumerableOnly) symbols = symbols.filter(function (sym) {return Object.getOwnPropertyDescriptor(object, sym).enumerable;});keys.push.apply(keys, symbols);}return keys;}function _objectSpread(target) {for (var i = 1; i < arguments.length; i++) {var source = arguments[i] != null ? arguments[i] : {};if (i % 2) {ownKeys(Object(source), true).forEach(function (key) {_defineProperty(target, key, source[key]);});} else if (Object.getOwnPropertyDescriptors) {Object.defineProperties(target, Object.getOwnPropertyDescriptors(source));} else {ownKeys(Object(source)).forEach(function (key) {Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key));});}}return target;}function _defineProperty(obj, key, value) {if (key in obj) {Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true });} else {obj[key] = value;}return obj;}var _default =
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
 
 {
+  components: {
+    diaryItem: diaryItem },
+
   data: function data() {
     return {
-      userid: '' };
+      // 状态栏高度，H5中，此值为0，因为H5不可操作状态栏
+      statusBarHeight: uni.getSystemInfoSync().statusBarHeight,
+      // 导航栏内容区域高度，不包括状态栏高度在内
+      navbarHeight: 44,
+      userid: '',
+      list: [{
+        id: 561,
+        userid: 7821,
+        username: "ksks",
+        following: false,
+        collect: false,
+        circle: '美食',
+        circleid: 8113,
+        comments: 23,
+        commentsData: [],
+        location: {
+          longitude: 115.8587658,
+          latitude: 28.7591635 },
+
+        avatar: "https://s3.bmp.ovh/imgs/2021/11/f0007619e29465d0.jpg",
+        badge: [],
+        content: "范家发为范家发为比办公空间不可被概括为对的范家发为比办对的范家发为比办对的范家发为比办对的范公空间不可被概括为比办公空范家发为范家发为比办公空间不可被概括为对的范家发为比办对的范家发为比办对的范家发为比办对的范公空间不可被概括为比办公空间不可被概括为间不可被概括为",
+        imgArray: [
+        "https://s3.bmp.ovh/imgs/2021/11/91650c5bd05e52d2.jpg",
+        "https://s3.bmp.ovh/imgs/2021/11/12628cf8aa4a62c7.jpg",
+        "https://s3.bmp.ovh/imgs/2021/11/e2598f87131a75db.png",
+        "https://s3.bmp.ovh/imgs/2021/11/6deded1a6fb9c0f9.png",
+        "https://s3.bmp.ovh/imgs/2021/11/f0007619e29465d0.jpg",
+        "https://s3.bmp.ovh/imgs/2021/11/ead26623c4006561.jpg",
+        "https://s3.bmp.ovh/imgs/2021/11/bf8fffd2a4f239ef.jpg"] },
+
+
+      {
+        id: 684,
+        userid: 6347,
+        username: "ksks",
+        following: false,
+        collect: false,
+        circle: '美食',
+        circleid: 81413,
+        comments: 23,
+        commentsData: [],
+        location: {
+          longitude: 115.8587658,
+          latitude: 28.7591635 },
+
+        avatar: "https://s3.bmp.ovh/imgs/2021/11/f0007619e29465d0.jpg",
+        badge: [],
+        content: "范家发为范家发为比办公空间不可被概括为对的范家发为比办对的范家发为比办对的范家发为比办对的范公空间不可被概括为比办公空间不可被概括为",
+        imgArray: [
+        "https://s3.bmp.ovh/imgs/2021/11/f0007619e29465d0.jpg"] }] };
+
+
+
+
+
 
   },
   onLoad: function onLoad(option) {
     this.userid = option.id;
   },
-  methods: _objectSpread({},
-  (0, _vuex.mapMutations)([])),
+  methods: {
+    togglelike: function togglelike(id) {
 
-  computed: _objectSpread({},
-  (0, _vuex.mapGetters)([])) };exports.default = _default;
+      console.log("togglelike 文章id为 " + id);
+
+    },
+    togglefolow: function togglefolow(id) {
+      console.log("togglefolow 用户id为 " + id);
+      this.$refs.uTips.show({
+        title: '关注/取消关注成功' });
+
+
+    },
+    togglecollect: function togglecollect(id) {
+      console.log("togglecollect 文章id为 " + id);
+      this.$refs.uTips.show({
+        title: '收藏/取消收藏成功' });
+
+    },
+    report: function report(id) {
+      console.log("report 举报 文章id为 " + id);
+    },
+    todetail: function todetail(id) {
+      console.log("todetail 跳转文章详情 文章id为 " + id);
+
+      uni.navigateTo({
+        url: "../contentdetail/contentdetail?id=".concat(id) });
+
+
+    },
+    checklocation: function checklocation(location) {
+      uni.openLocation({
+        longitude: location.longitude,
+        latitude: location.latitude });
+
+    },
+    tocirclepage: function tocirclepage(params) {
+      uni.navigateTo({
+        url: "../circledetail/circledetail?id=".concat(params.id, "&name=").concat(params.name) });
+
+    },
+    userdetail: function userdetail(id) {
+      // uni.navigateTo({
+      // 	url: `../userdetail/userdetail?id=${id}`
+      // })
+    } },
+
+  computed: {} };exports.default = _default;
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
 
 /***/ }),
 

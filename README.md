@@ -60,6 +60,16 @@
 + 
 
 *chatRoom*
+
+*userdetail*
+
++ 
++ 11.24 19:12 完成个人详情页面。少量事件没监听。
++ 
+
+*userdetail*
+
+
 ### ks
 
 
