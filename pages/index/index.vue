@@ -66,7 +66,7 @@
 		</view>
 
 
-		<u-tabbar :list="getTabBar" :mid-button="true" active-color="#5098FF"></u-tabbar>
+		<u-tabbar :list="getTabBar"  active-color="#5098FF"></u-tabbar>
 	</view>
 </template>
 
@@ -362,7 +362,7 @@
 
 				.swiper {
 					width: 100%;
-					height: 100%;
+					height: calc(100% - 80rpx);
 					// background-color: pink;
 
 				}

@@ -32,7 +32,7 @@
 					<view class="bottom-right">
 						<view class="edit">
 							<!-- <button type="default" size="mini" plain>编辑资料</button> -->
-							<u-button shape="circle" hair-line='true' size="mini" :plain="true" height='40rpx'
+							<u-button shape="circle" :hair-line='true' size="mini" :plain="true" height='40rpx'
 								:ripple="true" style="background:transparent ;">编辑资料</u-button>
 						</view>
 						<view class="menu">
@@ -55,7 +55,7 @@
 									src="https://vkceyugu.cdn.bspapp.com/VKCEYUGU-6867bdee-20ed-4501-aaff-ace5f5bc6ea5/1bd64c86-1c89-431c-b23d-c3b5ff845e8e.jpg"
 									mode="aspectFill"></image>
 								<view class="btn-issue">
-									<u-button shape="square" size="medium" ripple="true">立即发布</u-button>
+									<u-button shape="square" size="medium" :ripple="true">立即发布</u-button>
 								</view>
 							</view>
 							<view class="drmaic-item" v-for="(item ,i) in contentList" :key="item.id">
@@ -107,7 +107,7 @@
 		</view>
 
 
-		<u-tabbar :list="getTabBar" :mid-button="true" active-color="#5098FF"></u-tabbar>
+		<u-tabbar :list="getTabBar"  active-color="#5098FF"></u-tabbar>
 	</view>
 </template>
 
@@ -254,6 +254,7 @@
 				font-size: 30rpx;
 				font-weight: bold;
 				margin-bottom: 4rpx;
+				
 			}
 
 			.box view:nth-child(2) {

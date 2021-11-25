@@ -80,7 +80,7 @@
 		.scroll {
 			height: 100%;
 			box-sizing: border-box;
-			padding-bottom: 90rpx;
+			// padding-bottom: 90rpx;
 			// background-color: pink;
 		}
 	}

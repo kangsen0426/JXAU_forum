@@ -28,9 +28,9 @@
 /* 注意要写在第一行，同时给style标签加入lang="scss"属性 */
 @font-face {
   font-family: "iconfont"; /* Project id 2946376 */
-  src: url('//at.alicdn.com/t/font_2946376_8orgpqy69z6.woff2?t=1637241238079') format('woff2'),
-       url('//at.alicdn.com/t/font_2946376_8orgpqy69z6.woff?t=1637241238079') format('woff'),
-       url('//at.alicdn.com/t/font_2946376_8orgpqy69z6.ttf?t=1637241238079') format('truetype');
+  src: url('//at.alicdn.com/t/font_2946376_trual7lxwlq.woff2?t=1637398975664') format('woff2'),
+       url('//at.alicdn.com/t/font_2946376_trual7lxwlq.woff?t=1637398975664') format('woff'),
+       url('//at.alicdn.com/t/font_2946376_trual7lxwlq.ttf?t=1637398975664') format('truetype');
 }
 .iconfont {
   font-family: "iconfont" !important;
@@ -38,6 +38,33 @@
   font-style: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+.icon-dengji-C:before {
+  content: "\e604";
+}
+.icon-dengji-B:before {
+  content: "\e605";
+}
+.icon-dengji-D:before {
+  content: "\e607";
+}
+.icon-dengji-A:before {
+  content: "\e608";
+}
+.icon-jiantoul:before {
+  content: "\e602";
+}
+.icon-yuanxingjiantou:before {
+  content: "\e624";
+}
+.icon-jiantou:before {
+  content: "\e603";
+}
+.icon-shanchu:before {
+  content: "\e601";
+}
+.icon-huo:before {
+  content: "\e65b";
 }
 .icon-jia:before {
   content: "\e600";
