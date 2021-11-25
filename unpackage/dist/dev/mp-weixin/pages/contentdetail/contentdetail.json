@@ -4,7 +4,9 @@
   "enablePullDownRefresh": false,
   "usingComponents": {
     "u-navbar": "/node-modules/uview-ui/components/u-navbar/u-navbar",
+    "comment": "/components/comment/comment",
     "u-top-tips": "/node-modules/uview-ui/components/u-top-tips/u-top-tips",
-    "diary-item": "/components/diaryItem/diaryItem"
+    "diary-item": "/components/diaryItem/diaryItem",
+    "safe-footer": "/components/safe-footer/safe-footer"
   }
 }
