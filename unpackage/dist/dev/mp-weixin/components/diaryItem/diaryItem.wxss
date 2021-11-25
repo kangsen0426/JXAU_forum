@@ -97,6 +97,9 @@
   flex-wrap: wrap;
   align-items: center;
 }
+.daily_wrap .diary_content .image_box .wrap_box.data-v-4d09ba9c {
+  width: 100%;
+}
 .daily_wrap .diary_content .image_box .outer_box.data-v-4d09ba9c {
   width: calc(100% / 3 - 10rpx);
   height: 240rpx;

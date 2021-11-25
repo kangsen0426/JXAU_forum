@@ -212,6 +212,16 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 var _default =
 {
   name: "diaryItem",
@@ -219,7 +229,11 @@ var _default =
     list: {
       type: Object,
       default: {},
-      required: true } },
+      required: true },
+
+    detailpage: {
+      type: Boolean,
+      default: false } },
 
 
   data: function data() {
