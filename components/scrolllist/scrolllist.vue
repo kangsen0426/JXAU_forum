@@ -23,36 +23,7 @@
 			};
 		},
 		methods: {
-			refresherrefresh() {
-				this.refresherTriggered = true
-				console.log("下拉刷新~")
-
-				setTimeout(() => {
-					this.refresherTriggered = false
-
-				}, 2000)
-
-
-			},
-			refresherrestore() {
-				console.log("刷新结束~")
-			},
-			scrolltolower() {
-
-				// if (this.timer) {
-				// 	//还在刷新中
-				// 	return
-				// }
-
-				console.log("上拉加载~")
-				// this.bottomRefresherTriggered = true;
-
-				// this.timer = setTimeout(() => {
-				// 	this.bottomRefresherTriggered = false
-				// 	this.timer = null
-				// }, 2000)
-
-			},
+			   
 		}
 	}
 </script>

@@ -97,6 +97,9 @@
   flex-wrap: wrap;
   align-items: center;
 }
+.daily_wrap .diary_content .image_box .wrap_box.data-v-4d09ba9c {
+  width: 100%;
+}
 .daily_wrap .diary_content .image_box .outer_box.data-v-4d09ba9c {
   width: calc(100% / 3 - 10rpx);
   height: 240rpx;
@@ -119,13 +122,13 @@
   background-color: rgba(0, 0, 0, 0.6);
 }
 .daily_wrap .bottom.data-v-4d09ba9c {
-  height: 50rpx;
   line-height: 50rpx;
   display: flex;
   flex-wrap: wrap;
 }
 .daily_wrap .bottom .tag_wrap.data-v-4d09ba9c {
   display: flex;
+  flex-wrap: wrap;
 }
 .daily_wrap .bottom .tag_wrap .bottom_tag.data-v-4d09ba9c {
   box-sizing: border-box;

@@ -346,6 +346,8 @@
 
 					.name {
 						width: 100%;
+						display: flex;
+						align-items: center;
 						font-size: 28rpx;
 						font-weight: bold;
 						

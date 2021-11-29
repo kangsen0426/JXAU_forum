@@ -40,4 +40,11 @@ page .content .main.data-v-32e87e5c {
   overflow: hidden;
   position: relative;
 }
+page .content .main .comment_box.data-v-32e87e5c {
+  padding: 0 20rpx;
+}
+page .content .main .comment_box .title.data-v-32e87e5c {
+  width: 100%;
+  font-size: 32rpx;
+}
 

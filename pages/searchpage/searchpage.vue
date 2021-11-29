@@ -234,7 +234,7 @@
 								padding: 0 20rpx;
 								display: flex;
 								align-items: center;
-								border-bottom: 1rpx solid rgba(0, 0, 0, 0.1);
+								border-bottom: 1rpx solid rgba(188, 188, 188, 0.4);
 								
 								.text{
 									width: 80%;

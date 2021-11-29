@@ -5,7 +5,7 @@
 				<view class="user_avatar" @click="touserdetail">
 					<u-image :src="list.avatar" height="100%" border-radius="50%"></u-image>
 				</view>
-				<view class="user_name"  @click="touserdetail">
+				<view class="user_name" @click="touserdetail">
 					{{list.username}}
 				</view>
 				<view class="badge">
@@ -26,18 +26,28 @@
 		</view>
 		<view class="diary_content" @click="toContentDetail">
 			<view class="text_area">
-				<u-read-more :show-height="200" :toggle="true" text-indent="0" :shadow-style="shadowStyle">
+				<u-read-more v-if="!detailpage" :show-height="200" :toggle="true" text-indent="0" :shadow-style="shadowStyle">
 					<rich-text :nodes="list.content"></rich-text>
 				</u-read-more>
+				{{detailpage ? list.content : ''}}
 			</view>
 			<view class="image_box">
-				<view v-if="index < 5" :class="['outer_box',list.imgArray.length === 1 ? 'outer_box_onlyone' : '']"
+
+				<!-- //部分展示 -->
+				<view v-if="!detailpage && index < 5" :class="['outer_box',list.imgArray.length === 1 ? 'outer_box_onlyone' : '']"
 					v-for="(item,index) in list.imgArray" :key="index" @click.stop="previewimg(index)">
 					<u-image :src="item" height="100%"></u-image>
 				</view>
-				<view v-if="list.imgArray.length >= 6" class="outer_box_verymore">
+				<view v-if="!detailpage && list.imgArray.length >= 6" class="outer_box_verymore">
 					+{{list.imgArray.length - 5}}
 				</view>
+				
+				<!-- 全部展示 -->
+				<view v-if="detailpage" :class="['outer_box',list.imgArray.length === 1 ? 'outer_box_onlyone' : '']"
+					v-for="(item,index) in list.imgArray" :key="index" @click.stop="previewimg(index)">
+					<u-image :src="item" height="100%"></u-image>
+				</view>
+
 			</view>
 		</view>
 		<view class="bottom">
@@ -56,6 +66,7 @@
 				<i class="iconfont icon-xihuan1" @click="togglelike"></i>
 			</view>
 		</view>
+
 		<u-popup v-model="popupshow" mode="bottom" border-radius="20">
 			<view class="option" @click="togglecollect">{{list.collect ? '取消收藏' : '收藏'}}</view>
 			<view class="option option_last" @click="report">举报</view>
@@ -71,6 +82,10 @@
 				type: Object,
 				default: {},
 				required: true
+			},
+			detailpage: {
+				type: Boolean,
+				default: false
 			}
 		},
 		data() {
@@ -112,17 +127,17 @@
 			toContentDetail() {
 				this.$emit('todetail', this.list.id)
 			},
-			looklocation(){
+			looklocation() {
 				this.$emit('checklocation', this.list.location)
 			},
-			tocircle(){
+			tocircle() {
 				let params = {
-					id:this.list.circleid,
-					name:this.list.circle
+					id: this.list.circleid,
+					name: this.list.circle
 				}
 				this.$emit('tocirclepage', params)
 			},
-			touserdetail(){
+			touserdetail() {
 				this.$emit('touserdetail', this.list.userid)
 			}
 		}
@@ -226,6 +241,10 @@
 				align-items: center;
 				// justify-content: space-between;
 
+				.wrap_box {
+					width: 100%;
+				}
+
 				.outer_box {
 					width: calc(100% / 3 - 10rpx);
 					height: 240rpx;
@@ -255,7 +274,7 @@
 		}
 
 		.bottom {
-			height: 50rpx;
+			// height: 50rpx;
 			line-height: 50rpx;
 			display: flex;
 			flex-wrap: wrap;
@@ -263,6 +282,7 @@
 
 			.tag_wrap {
 				display: flex;
+				flex-wrap: wrap;
 
 				.bottom_tag {
 					box-sizing: border-box;
