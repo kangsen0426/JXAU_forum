@@ -96,13 +96,13 @@ var components
 try {
   components = {
     uNavbar: function() {
-      return __webpack_require__.e(/*! import() | node-modules/uview-ui/components/u-navbar/u-navbar */ "node-modules/uview-ui/components/u-navbar/u-navbar").then(__webpack_require__.bind(null, /*! uview-ui/components/u-navbar/u-navbar.vue */ 167))
+      return __webpack_require__.e(/*! import() | node-modules/uview-ui/components/u-navbar/u-navbar */ "node-modules/uview-ui/components/u-navbar/u-navbar").then(__webpack_require__.bind(null, /*! uview-ui/components/u-navbar/u-navbar.vue */ 209))
     },
     uLoading: function() {
-      return __webpack_require__.e(/*! import() | node-modules/uview-ui/components/u-loading/u-loading */ "node-modules/uview-ui/components/u-loading/u-loading").then(__webpack_require__.bind(null, /*! uview-ui/components/u-loading/u-loading.vue */ 279))
+      return __webpack_require__.e(/*! import() | node-modules/uview-ui/components/u-loading/u-loading */ "node-modules/uview-ui/components/u-loading/u-loading").then(__webpack_require__.bind(null, /*! uview-ui/components/u-loading/u-loading.vue */ 321))
     },
     safeFooter: function() {
-      return __webpack_require__.e(/*! import() | components/safe-footer/safe-footer */ "components/safe-footer/safe-footer").then(__webpack_require__.bind(null, /*! @/components/safe-footer/safe-footer.vue */ 258))
+      return __webpack_require__.e(/*! import() | components/safe-footer/safe-footer */ "components/safe-footer/safe-footer").then(__webpack_require__.bind(null, /*! @/components/safe-footer/safe-footer.vue */ 300))
     }
   }
 } catch (e) {
@@ -159,7 +159,7 @@ __webpack_require__.r(__webpack_exports__);
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var safeFooter = function safeFooter() {__webpack_require__.e(/*! require.ensure | components/safe-footer/safe-footer */ "components/safe-footer/safe-footer").then((function () {return resolve(__webpack_require__(/*! ../../components/safe-footer/safe-footer.vue */ 258));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};var _default =
+Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var safeFooter = function safeFooter() {__webpack_require__.e(/*! require.ensure | components/safe-footer/safe-footer */ "components/safe-footer/safe-footer").then((function () {return resolve(__webpack_require__(/*! ../../components/safe-footer/safe-footer.vue */ 300));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};var _default =
 
 
 

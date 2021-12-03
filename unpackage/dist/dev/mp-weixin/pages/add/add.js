@@ -95,8 +95,11 @@ __webpack_require__.r(__webpack_exports__);
 var components
 try {
   components = {
+    uNavbar: function() {
+      return __webpack_require__.e(/*! import() | node-modules/uview-ui/components/u-navbar/u-navbar */ "node-modules/uview-ui/components/u-navbar/u-navbar").then(__webpack_require__.bind(null, /*! uview-ui/components/u-navbar/u-navbar.vue */ 209))
+    },
     uTabbar: function() {
-      return Promise.all(/*! import() | node-modules/uview-ui/components/u-tabbar/u-tabbar */[__webpack_require__.e("common/vendor"), __webpack_require__.e("node-modules/uview-ui/components/u-tabbar/u-tabbar")]).then(__webpack_require__.bind(null, /*! uview-ui/components/u-tabbar/u-tabbar.vue */ 209))
+      return Promise.all(/*! import() | node-modules/uview-ui/components/u-tabbar/u-tabbar */[__webpack_require__.e("common/vendor"), __webpack_require__.e("node-modules/uview-ui/components/u-tabbar/u-tabbar")]).then(__webpack_require__.bind(null, /*! uview-ui/components/u-tabbar/u-tabbar.vue */ 251))
     }
   }
 } catch (e) {
@@ -153,7 +156,58 @@ __webpack_require__.r(__webpack_exports__);
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;
+/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -176,18 +230,51 @@ var _vuex = __webpack_require__(/*! vuex */ 13);function ownKeys(object, enumera
 
 {
   data: function data() {
-    return {};
-
+    return {
+      content: "",
+      uploadimgList: [] };
 
   },
   onLoad: function onLoad() {
 
   },
-  methods: _objectSpread({},
-  (0, _vuex.mapMutations)([])),
+  methods: {
+    chhooseImage: function chhooseImage() {
+      var self = this;
+      uni.chooseImage({
+        success: function success(res) {
+          console.log(res.tempFilePaths);
+
+          res.tempFilePaths.forEach(function (item) {
+            if (self.uploadimgList.length < 9) {
+              self.uploadimgList.push(item);
+            }
+          });
+        } });
+
+    },
+    delimg: function delimg(index) {
+      this.uploadimgList.splice(index, 1);
+    },
+    chooseCircle: function chooseCircle() {
+      uni.navigateTo({
+        url: "../allcirclepage/allcirclepage" });
+
+    },
+    chooseLocation: function chooseLocation() {
+      uni.chooseLocation({
+        success: function success(res) {
+          console.log('位置名称：' + res.name);
+          console.log('详细地址：' + res.address);
+          console.log('纬度：' + res.latitude);
+          console.log('经度：' + res.longitude);
+        } });
+
+    } },
 
   computed: _objectSpread({},
   (0, _vuex.mapGetters)(['getTabBar'])) };exports.default = _default;
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
 
 /***/ }),
 

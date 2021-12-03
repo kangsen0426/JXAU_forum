@@ -96,13 +96,13 @@ var components
 try {
   components = {
     uNavbar: function() {
-      return __webpack_require__.e(/*! import() | node-modules/uview-ui/components/u-navbar/u-navbar */ "node-modules/uview-ui/components/u-navbar/u-navbar").then(__webpack_require__.bind(null, /*! uview-ui/components/u-navbar/u-navbar.vue */ 167))
+      return __webpack_require__.e(/*! import() | node-modules/uview-ui/components/u-navbar/u-navbar */ "node-modules/uview-ui/components/u-navbar/u-navbar").then(__webpack_require__.bind(null, /*! uview-ui/components/u-navbar/u-navbar.vue */ 209))
     },
     comment: function() {
-      return __webpack_require__.e(/*! import() | components/comment/comment */ "components/comment/comment").then(__webpack_require__.bind(null, /*! @/components/comment/comment.vue */ 251))
+      return __webpack_require__.e(/*! import() | components/comment/comment */ "components/comment/comment").then(__webpack_require__.bind(null, /*! @/components/comment/comment.vue */ 293))
     },
     uTopTips: function() {
-      return __webpack_require__.e(/*! import() | node-modules/uview-ui/components/u-top-tips/u-top-tips */ "node-modules/uview-ui/components/u-top-tips/u-top-tips").then(__webpack_require__.bind(null, /*! uview-ui/components/u-top-tips/u-top-tips.vue */ 202))
+      return __webpack_require__.e(/*! import() | node-modules/uview-ui/components/u-top-tips/u-top-tips */ "node-modules/uview-ui/components/u-top-tips/u-top-tips").then(__webpack_require__.bind(null, /*! uview-ui/components/u-top-tips/u-top-tips.vue */ 244))
     }
   }
 } catch (e) {
@@ -198,7 +198,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-var _comments = _interopRequireDefault(__webpack_require__(/*! ../../testData/comments.js */ 91));var _methods;function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}function _defineProperty(obj, key, value) {if (key in obj) {Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true });} else {obj[key] = value;}return obj;}var DiaryItem = function DiaryItem() {__webpack_require__.e(/*! require.ensure | components/diaryItem/diaryItem */ "components/diaryItem/diaryItem").then((function () {return resolve(__webpack_require__(/*! ../../components/diaryItem/diaryItem.vue */ 223));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};var comment = function comment() {__webpack_require__.e(/*! require.ensure | components/comment/comment */ "components/comment/comment").then((function () {return resolve(__webpack_require__(/*! ../../components/comment/comment.vue */ 251));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};var safeFooter = function safeFooter() {__webpack_require__.e(/*! require.ensure | components/safe-footer/safe-footer */ "components/safe-footer/safe-footer").then((function () {return resolve(__webpack_require__(/*! ../../components/safe-footer/safe-footer.vue */ 258));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};var _default =
+var _comments = _interopRequireDefault(__webpack_require__(/*! ../../testData/comments.js */ 91));var _methods;function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}function _defineProperty(obj, key, value) {if (key in obj) {Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true });} else {obj[key] = value;}return obj;}var DiaryItem = function DiaryItem() {__webpack_require__.e(/*! require.ensure | components/diaryItem/diaryItem */ "components/diaryItem/diaryItem").then((function () {return resolve(__webpack_require__(/*! ../../components/diaryItem/diaryItem.vue */ 265));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};var comment = function comment() {__webpack_require__.e(/*! require.ensure | components/comment/comment */ "components/comment/comment").then((function () {return resolve(__webpack_require__(/*! ../../components/comment/comment.vue */ 293));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};var safeFooter = function safeFooter() {__webpack_require__.e(/*! require.ensure | components/safe-footer/safe-footer */ "components/safe-footer/safe-footer").then((function () {return resolve(__webpack_require__(/*! ../../components/safe-footer/safe-footer.vue */ 300));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};var _default =
 
 
 
