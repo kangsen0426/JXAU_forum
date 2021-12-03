@@ -1,8 +1,9 @@
 <template>
 	<view class="content home">
 		<view class="fixed-bg"></view>
-		<u-navbar  title="name" back-icon-name='scan' :background="{background:'rgba(0,0,0,0)'}" :border-bottom='false' back-icon-color='white' title-color='white'></u-navbar>
-<!-- 		<view class="nav-tabbar">
+		<u-navbar title="name" back-icon-name='scan' :background="{background:'rgba(0,0,0,0)'}" :border-bottom='false'
+			back-icon-color='white' title-color='white'></u-navbar>
+		<!-- 		<view class="nav-tabbar">
 			<u-icon name="scan" class='scan'></u-icon>
 		</view>
  -->
@@ -33,10 +34,11 @@
 						<view class="edit">
 							<!-- <button type="default" size="mini" plain>编辑资料</button> -->
 							<u-button shape="circle" :hair-line='true' size="mini" :plain="true" height='40rpx'
-								:ripple="true" style="background:transparent ;">编辑资料</u-button>
+								:ripple="true" style="background:transparent ;" @click='ToEditdata()'>编辑资料</u-button>
 						</view>
 						<view class="menu">
-							<u-button shape="circle" size="mini" plain height='40rpx' :ripple="true">三</u-button>
+							<u-button shape="circle" size="mini" plain height='40rpx' :ripple="true" @click='ToSet()'>三
+							</u-button>
 						</view>
 					</view>
 				</view>
@@ -107,7 +109,7 @@
 		</view>
 
 
-		<u-tabbar :list="getTabBar"  active-color="#5098FF"></u-tabbar>
+		<u-tabbar :list="getTabBar" active-color="#5098FF"></u-tabbar>
 	</view>
 </template>
 
@@ -160,15 +162,24 @@
 			getLike() {
 				this.contentList = [] // 调用获取 getLike
 			},
-			ggetMoney() {
+			getMoney() {
 				this.contentList = [] // 调用获取 getLike
-			}
-
+			},
+			ToEditdata() {
+				uni.navigateTo({
+					url: '../editdata/editdata'
+				})
+			},
+			ToSet() {
+				uni.navigateTo({
+					url: '../set/set'
+				})
+			},
 
 		},
 		computed: {
 			...mapGetters(['getTabBar'])
-		}
+		},
 	}
 </script>
 <style>
@@ -254,7 +265,7 @@
 				font-size: 30rpx;
 				font-weight: bold;
 				margin-bottom: 4rpx;
-				
+
 			}
 
 			.box view:nth-child(2) {

@@ -4,41 +4,7 @@
     "ignore": []
   },
   "setting": {
-    "urlCheck": false,
-    "es6": true,
-    "enhance": false,
-    "postcss": true,
-    "preloadBackgroundData": false,
-    "minified": true,
-    "newFeature": false,
-    "coverView": true,
-    "nodeModules": false,
-    "autoAudits": false,
-    "showShadowRootInWxmlPanel": true,
-    "scopeDataCheck": false,
-    "uglifyFileName": false,
-    "checkInvalidKey": true,
-    "checkSiteMap": true,
-    "uploadWithSourceMap": true,
-    "compileHotReLoad": false,
-    "useMultiFrameRuntime": true,
-    "useApiHook": true,
-    "useApiHostProcess": true,
-    "babelSetting": {
-      "ignore": [],
-      "disablePlugins": [],
-      "outputPath": ""
-    },
-    "enableEngineNative": false,
-    "useIsolateContext": true,
-    "userConfirmedBundleSwitch": false,
-    "packNpmManually": false,
-    "packNpmRelationList": [],
-    "minifyWXSS": true,
-    "disableUseStrict": false,
-    "showES6CompileOption": false,
-    "useCompilerPlugins": false,
-    "minifyWXML": true
+    "urlCheck": false
   },
   "compileType": "miniprogram",
   "libVersion": "",
@@ -46,21 +12,73 @@
   "projectname": "forum",
   "condition": {
     "search": {
+      "current": -1,
       "list": []
     },
     "conversation": {
+      "current": -1,
       "list": []
     },
     "game": {
+      "current": -1,
       "list": []
     },
     "miniprogram": {
+      "current": 0,
       "list": [
         {
           "name": "home",
           "query": "",
           "id": 0,
           "pathName": "pages/home/home"
+        },
+        {
+          "name": "chatRoomXSX",
+          "query": "",
+          "id": 1,
+          "pathName": "pages/chatRoomXSX/chatRoomXSX"
+        },
+        {
+          "name": "editdata",
+          "query": "",
+          "id": 2,
+          "pathName": "pages/editdata/editdata"
+        },
+        {
+          "name": "set",
+          "query": "",
+          "id": 3,
+          "pathName": "pages/set/set"
+        },
+        {
+          "name": "disclaimer",
+          "query": "",
+          "id": 4,
+          "pathName": "/pages/disclaimer/disclaimer"
+        },
+        {
+          "name": "about",
+          "query": "",
+          "id": 5,
+          "pathName": "/pages/about/about"
+        },
+        {
+          "name": "disclaimer",
+          "query": "",
+          "id": 6,
+          "pathName": "/pages/disclaimer/disclaimer"
+        },
+        {
+          "name": "disclaimer",
+          "query": "",
+          "id": 7,
+          "pathName": "/pages/disclaimer/disclaimer"
+        },
+        {
+          "name": "feedback",
+          "query": "",
+          "id": 8,
+          "pathName": "/pages/feedback/feedback"
         }
       ]
     }

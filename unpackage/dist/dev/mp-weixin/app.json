@@ -11,7 +11,15 @@
     "pages/searchpage/searchpage",
     "pages/allcirclepage/allcirclepage",
     "pages/chatRoom/chatRoom",
-    "pages/chatRoomXSX/chatRoomXSX"
+    "pages/chatRoomXSX/chatRoomXSX",
+    "pages/editdata/editdata",
+    "pages/set/set",
+    "pages/disclaimer/disclaimer",
+    "pages/feedback/feedback",
+    "pages/management-circles/management-circles",
+    "pages/user-agreement/user-agreement",
+    "pages/privacy/privacy",
+    "pages/about/about"
   ],
   "subPackages": [],
   "window": {
@@ -43,6 +51,5 @@
       }
     ]
   },
-  "usingComponents": {},
-  "sitemapLocation": "sitemap.json"
+  "usingComponents": {}
 }
