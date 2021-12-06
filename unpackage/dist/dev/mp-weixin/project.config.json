@@ -31,6 +31,54 @@
           "query": "",
           "id": 0,
           "pathName": "pages/home/home"
+        },
+        {
+          "name": "chatRoomXSX",
+          "query": "",
+          "id": 1,
+          "pathName": "pages/chatRoomXSX/chatRoomXSX"
+        },
+        {
+          "name": "editdata",
+          "query": "",
+          "id": 2,
+          "pathName": "pages/editdata/editdata"
+        },
+        {
+          "name": "set",
+          "query": "",
+          "id": 3,
+          "pathName": "pages/set/set"
+        },
+        {
+          "name": "disclaimer",
+          "query": "",
+          "id": 4,
+          "pathName": "/pages/disclaimer/disclaimer"
+        },
+        {
+          "name": "about",
+          "query": "",
+          "id": 5,
+          "pathName": "/pages/about/about"
+        },
+        {
+          "name": "disclaimer",
+          "query": "",
+          "id": 6,
+          "pathName": "/pages/disclaimer/disclaimer"
+        },
+        {
+          "name": "disclaimer",
+          "query": "",
+          "id": 7,
+          "pathName": "/pages/disclaimer/disclaimer"
+        },
+        {
+          "name": "feedback",
+          "query": "",
+          "id": 8,
+          "pathName": "/pages/feedback/feedback"
         }
       ]
     }

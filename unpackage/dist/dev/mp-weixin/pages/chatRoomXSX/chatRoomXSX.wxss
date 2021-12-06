@@ -41,4 +41,38 @@ page .content .main {
   overflow: hidden;
   position: relative;
 }
+page .content .main .bottom {
+  display: flex;
+  height: 100rpx;
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1030;
+  border-top: 2rpx #f4f4f4 solid;
+  align-items: center;
+  background-color: white;
+}
+page .content .main .bottom input {
+  background-color: #f4f4f4;
+  flex: 1;
+  height: 70%;
+  margin: 0 20rpx;
+  border-radius: 20rpx;
+}
+page .content .main .bottom .smile {
+  font-size: 58rpx;
+  color: #2979ff;
+  margin-right: 8rpx;
+}
+page .content .main .bottom .sent {
+  margin-left: auto;
+  margin-right: 14rpx;
+}
+page .content .main .bottom .sent button {
+  width: 100rpx;
+  height: 68rpx;
+  font-size: 30rpx;
+  border-radius: 20rpx;
+}
 

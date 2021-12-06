@@ -1,8 +1,10 @@
 @font-face {
   font-family: "iconfont"; /* Project id 2946376 */
+
   src: url('//at.alicdn.com/t/font_2946376_hhii216sc67.woff2?t=1638235653725') format('woff2'),
        url('//at.alicdn.com/t/font_2946376_hhii216sc67.woff?t=1638235653725') format('woff'),
        url('//at.alicdn.com/t/font_2946376_hhii216sc67.ttf?t=1638235653725') format('truetype');
+
 }
 
 .iconfont {
@@ -24,6 +26,7 @@
 .icon-shipin:before {
   content: "\e644";
 }
+
 
 .icon-xiaolian:before {
   content: "\e610";
