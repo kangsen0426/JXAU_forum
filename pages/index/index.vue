@@ -1,7 +1,7 @@
 <template>
 	<view class="content">
 
-		<!-- 自定义导航栏放这-->
+		<!-- 自定义导航栏放这..-->
 		<u-navbar :is-back="false">
 			<view class="slot-wrap">
 				<u-search class="index_search" :show-action="false" disabled @click="tosearchpage"></u-search>
