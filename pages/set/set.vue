@@ -11,7 +11,9 @@
 					<u-cell-item icon="moments" title="圈子" value='管理我的圈子' @click='ToManagement'></u-cell-item>
 
 					<u-cell-item icon="order" title="我要反馈" value='提个建议叭~' @click='ToFeedback'></u-cell-item>
+					<u-cell-item icon="level" title="学生认证" @click='toStudentAuth' value="已认证"></u-cell-item>
 					<u-cell-item icon="list-dot" title="隐私政策" @click='ToPrivacy'></u-cell-item>
+					
 					<u-cell-item icon="file-text" title="用户协议" @click='ToUserAgreement'></u-cell-item>
 					<!-- <u-cell-item icon="rmb-circle" title="打赏声明" ></u-cell-item> -->
 					<u-cell-item icon="coupon" title="免责声明" @click='ToDisclaimer'></u-cell-item>
@@ -64,6 +66,11 @@
 				uni.navigateTo({
 					url: '../user-agreement/user-agreement'
 				})
+			},
+			toStudentAuth(){
+					uni.navigateTo({
+						url:"../authenticationPage/authenticationPage"
+					})
 			},
 			//免责声明
 			ToDisclaimer() {

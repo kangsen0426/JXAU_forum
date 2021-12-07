@@ -31,7 +31,7 @@ const store = new Vuex.Store({
 				iconPath: "play-right",
 				selectedIconPath: "play-right-fill",
 				text: '消息',
-				count: 23,
+				count: 23, 
 				isDot: false,
 				customIcon: false,
 			},
@@ -43,18 +43,31 @@ const store = new Vuex.Store({
 				
 				customIcon: false,
 			},
-		]
+		],
+		userInfo:uni.getStorageSync("__USER_INFO") || {
+				name:"康僧",
+				avatar:"http://ksimagebed.oss-cn-hangzhou.aliyuncs.com/imgbed/2021-12-6-22%3A35%3A7-cfb2b2b49b2ea762d6b643650f115c72.jpg",
+				birthday:"2000-03-15",
+				intro:"哈哈哈哈",
+				bg:"https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fpic1.win4000.com%2Fmobile%2F2018-11-06%2F5be0f564235b7.jpg&refer=http%3A%2F%2Fpic1.win4000.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=jpeg?sec=1639892174&t=95ba842e962b829ed0f19d6856a4b047"
+			}
 	},
 	getters: {
 		getTabBar(state) {
 			return state.tabBarlist
-		}
+		},
+		
 	},
 	mutations: {
-
+		GET_USER_INFO(state,payload){
+			state.userInfo = payload;
+		}
 	},
 	actions: {
-
+		set_userInfo({commit},payload){
+			uni.setStorageSync("__USER_INFO",payload)
+			commit('GET_USER_INFO',payload)
+		}
 	}
 })
 

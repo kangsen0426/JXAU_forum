@@ -2,6 +2,7 @@
   "pages": [
     "pages/index/index",
     "pages/circle/circle",
+    "pages/authenticationPage/authenticationPage",
     "pages/add/add",
     "pages/message/message",
     "pages/home/home",
@@ -19,7 +20,8 @@
     "pages/management-circles/management-circles",
     "pages/user-agreement/user-agreement",
     "pages/privacy/privacy",
-    "pages/about/about"
+    "pages/about/about",
+    "pages/u-avater-cropper/u-avatar-cropper"
   ],
   "subPackages": [],
   "window": {

@@ -7,6 +7,7 @@
 				</view>
 				<view class="user_name" @click="touserdetail">
 					{{list.username}}
+					
 				</view>
 				<view class="badge">
 					<i class="iconfont icon-guanliyuan_guanliyuanliebiao"></i>
