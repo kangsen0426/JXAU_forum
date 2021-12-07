@@ -29,7 +29,7 @@
 				"navigationBarTitleText": "学生认证",
 				"enablePullDownRefresh": false
 			}
-		
+
 		},
 		{
 			"path": "pages/add/add",
@@ -112,89 +112,73 @@
 				"enablePullDownRefresh": false
 			}
 
-		}
-	    ,{
-            "path" : "pages/editdata/editdata",
-            "style" :                                                                                    
-            {
-                "navigationBarTitleText": "",
-                "enablePullDownRefresh": false,
+		}, {
+			"path": "pages/editdata/editdata",
+			"style": {
+				"navigationBarTitleText": "",
+				"enablePullDownRefresh": false,
 				"navigationStyle": "custom"
-            }
-            
-        }
-        ,{
-            "path" : "pages/set/set",
-            "style" :                                                                                    
-            {
-                "navigationBarTitleText": "",
-                "enablePullDownRefresh": false,
+			}
+
+		}, {
+			"path": "pages/set/set",
+			"style": {
+				"navigationBarTitleText": "",
+				"enablePullDownRefresh": false,
 				"navigationStyle": "custom"
-				
-				
-            }
-            
-        }
-        ,{
-            "path" : "pages/disclaimer/disclaimer",
-            "style" :                                                                                    
-            {
-                "navigationBarTitleText": "",
-                "enablePullDownRefresh": false,
+
+
+			}
+
+		}, {
+			"path": "pages/disclaimer/disclaimer",
+			"style": {
+				"navigationBarTitleText": "",
+				"enablePullDownRefresh": false,
 				"navigationStyle": "custom"
-            }
-            
-        }
-        ,{
-            "path" : "pages/feedback/feedback",
-            "style" :                                                                                    
-            {
-                "navigationBarTitleText": "",
-                "enablePullDownRefresh": false,
+			}
+
+		}, {
+			"path": "pages/feedback/feedback",
+			"style": {
+				"navigationBarTitleText": "",
+				"enablePullDownRefresh": false,
 				"navigationStyle": "custom"
-            }
-            
-        }
-        ,{
-            "path" : "pages/management-circles/management-circles",
-            "style" :                                                                                    
-            {
-                "navigationBarTitleText": "",
+			}
+
+		}, {
+			"path": "pages/management-circles/management-circles",
+			"style": {
+				"navigationBarTitleText": "",
 				"navigationStyle": "custom",
-                "enablePullDownRefresh": false
-            }
-            
-        }
-        ,{
-            "path" : "pages/user-agreement/user-agreement",
-            "style" :                                                                                    
-            {
-                "navigationBarTitleText": "",
+				"enablePullDownRefresh": false
+			}
+
+		}, {
+			"path": "pages/user-agreement/user-agreement",
+			"style": {
+				"navigationBarTitleText": "",
 				"navigationStyle": "custom",
-                "enablePullDownRefresh": false
-            }
-            
-        }
-        ,{
-            "path" : "pages/privacy/privacy",
-            "style" :                                                                                    
-            {
-                "navigationBarTitleText": "",
+				"enablePullDownRefresh": false
+			}
+
+		}, {
+			"path": "pages/privacy/privacy",
+			"style": {
+				"navigationBarTitleText": "",
 				"navigationStyle": "custom",
-                "enablePullDownRefresh": false
-            }
-            
-        }
-        ,{
-            "path" : "pages/about/about",
-            "style" :                                                                                    
-            {
-                "navigationBarTitleText": "",
+				"enablePullDownRefresh": false
+			}
+
+		}, {
+			"path": "pages/about/about",
+			"style": {
+				"navigationBarTitleText": "",
 				"navigationStyle": "custom",
-                "enablePullDownRefresh": false
-            }
-            
-        },
+				"enablePullDownRefresh": false
+			}
+
+		},
 		{
 			"path": "pages/u-avater-cropper/u-avatar-cropper",
 			"style": {
@@ -203,6 +187,25 @@
 			}
 		}
 
+		, {
+			"path": "pages/login/login",
+			"style": {
+				"navigationBarTitleText": "",
+				"navigationStyle": "custom",
+				"enablePullDownRefresh": false
+			}
+
+		}
+	    ,{
+            "path" : "pages/searchResult/searchResult",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "",
+				"navigationStyle": "custom",
+                "enablePullDownRefresh": false
+            }
+            
+        }
     ],
 
 	"globalStyle": {

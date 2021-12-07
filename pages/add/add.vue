@@ -63,7 +63,7 @@
 				</view>
 			</scroll-view>
 
-			<view class="send">
+			<view class="send" @click="send">
 				<i class="iconfont icon-fabusekuai"></i>
 				发布
 			</view>
@@ -97,6 +97,19 @@
 
 		},
 		methods: {
+			send(){
+				uni.showLoading({
+					title:"上传中..."
+				})
+				
+				setTimeout(()=>{
+					uni.hideLoading()
+					
+					uni.showToast({
+						title:'上传成功，等待审核~'
+					})
+				},1500)
+			},
 			chooseOne(type) {
 				if (type) {
 					this.selectType = '找失主'

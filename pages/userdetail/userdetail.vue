@@ -8,19 +8,19 @@
 
 				<view class="top_info_box">
 					<view class="image_box">
-						<u-image width="100%" height="100%" src="https://s3.bmp.ovh/imgs/2021/11/f0007619e29465d0.jpg">
+						<u-image width="100%" height="100%" src="https://s3.bmp.ovh/imgs/2021/12/16d0fa882cc0e092.jpg">
 						</u-image>
 					</view>
 					<view class="avatar_box">
 						<view class="avatar">
 							<u-image width="152rpx" height="152rpx"
-								src="https://s3.bmp.ovh/imgs/2021/11/f0007619e29465d0.jpg" border-radius="50%">
+								src="https://s3.bmp.ovh/imgs/2021/12/ba66243319169664.jpg" border-radius="50%">
 							</u-image>
 						</view>
 					</view>
 					<view class="base_info_box">
-						<view class="name">我是管理员</view>
-						<i class="iconfont icon-guanliyuan_guanliyuanliebiao"></i>
+						<view class="name">哈哈聊天</view>
+						<!-- <i class="iconfont icon-guanliyuan_guanliyuanliebiao"></i> -->
 					</view>
 					<view class="bottom_option">
 						<view class="left">
@@ -33,7 +33,7 @@
 								<view class="title">粉丝</view>
 							</view>
 							<view class="item">
-								<view class="count">346</view>
+								<view class="count">0</view>
 								<view class="title">获赞</view>
 							</view>
 						</view>
@@ -54,23 +54,23 @@
 
 				<view class="user_content">
 					<view class="total_num">
-						共23条动态
+						共1条动态
 					</view>
 					<view class="content_item" v-for="(item,index) in list" :key="item.id">
 						<diary-item :list="item" @togglelike="togglelike" @togglefolow="togglefolow"
-							@togglecollect="togglecollect" @report="report" @todetail="todetail" @checklocation="checklocation"
-							@tocirclepage="tocirclepage" @touserdetail="userdetail">
+							@togglecollect="togglecollect" @report="report" @todetail="todetail"
+							@checklocation="checklocation" @tocirclepage="tocirclepage" @touserdetail="userdetail">
 						</diary-item>
 					</view>
 				</view>
-				
-				
+
+
 
 
 
 			</scroll-view>
 
-			
+
 		</view>
 
 
@@ -93,39 +93,12 @@
 				navbarHeight: 44,
 				userid: '',
 				list: [{
-						id: 561,
-						userid: 7821,
-						username: "ksks",
-						following: false,
-						collect: false,
-						circle: '美食',
-						circleid: 8113,
-						comments: 23,
-						commentsData: [],
-						location: {
-							longitude: 115.8587658,
-							latitude: 28.7591635,
-						},
-						avatar: "https://s3.bmp.ovh/imgs/2021/11/f0007619e29465d0.jpg",
-						badge: [],
-						content: "范家发为范家发为比办公空间不可被概括为对的范家发为比办对的范家发为比办对的范家发为比办对的范公空间不可被概括为比办公空范家发为范家发为比办公空间不可被概括为对的范家发为比办对的范家发为比办对的范家发为比办对的范公空间不可被概括为比办公空间不可被概括为间不可被概括为",
-						imgArray: [
-							"https://s3.bmp.ovh/imgs/2021/11/91650c5bd05e52d2.jpg",
-							"https://s3.bmp.ovh/imgs/2021/11/12628cf8aa4a62c7.jpg",
-							"https://s3.bmp.ovh/imgs/2021/11/e2598f87131a75db.png",
-							"https://s3.bmp.ovh/imgs/2021/11/6deded1a6fb9c0f9.png",
-							"https://s3.bmp.ovh/imgs/2021/11/f0007619e29465d0.jpg",
-							"https://s3.bmp.ovh/imgs/2021/11/ead26623c4006561.jpg",
-							"https://s3.bmp.ovh/imgs/2021/11/bf8fffd2a4f239ef.jpg"
-						]
-					},
-					{
-						id: 684,
+						id: 3333,
 						userid: 6347,
-						username: "ksks",
+						username: "哈哈聊天",
 						following: false,
 						collect: false,
-						circle: '美食',
+						circle: '日常',
 						circleid: 81413,
 						comments: 23,
 						commentsData: [],
@@ -133,13 +106,12 @@
 							longitude: 115.8587658,
 							latitude: 28.7591635,
 						},
-						avatar: "https://s3.bmp.ovh/imgs/2021/11/f0007619e29465d0.jpg",
-						badge: [],
-						content: "范家发为范家发为比办公空间不可被概括为对的范家发为比办对的范家发为比办对的范家发为比办对的范公空间不可被概括为比办公空间不可被概括为",
+						avatar: "https://s3.bmp.ovh/imgs/2021/12/ba66243319169664.jpg",
+						content: "天气不错",
 						imgArray: [
-							"https://s3.bmp.ovh/imgs/2021/11/f0007619e29465d0.jpg"
+							"https://s3.bmp.ovh/imgs/2021/12/16d0fa882cc0e092.jpg"
 						]
-					}
+					},
 
 				]
 

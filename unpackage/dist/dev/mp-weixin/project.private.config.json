@@ -1,0 +1,77 @@
+{
+    "condition": {
+        "plugin": {
+            "list": []
+        },
+        "game": {
+            "list": []
+        },
+        "gamePlugin": {
+            "list": []
+        },
+        "miniprogram": {
+            "list": [
+                {
+                    "id": 0,
+                    "name": "home",
+                    "pathName": "pages/home/home",
+                    "query": ""
+                },
+                {
+                    "id": 1,
+                    "name": "chatRoomXSX",
+                    "pathName": "pages/chatRoomXSX/chatRoomXSX",
+                    "query": ""
+                },
+                {
+                    "id": 2,
+                    "name": "editdata",
+                    "pathName": "pages/editdata/editdata",
+                    "query": ""
+                },
+                {
+                    "id": 3,
+                    "name": "set",
+                    "pathName": "pages/set/set",
+                    "query": ""
+                },
+                {
+                    "id": 4,
+                    "name": "disclaimer",
+                    "pathName": "/pages/disclaimer/disclaimer",
+                    "query": ""
+                },
+                {
+                    "id": 5,
+                    "name": "about",
+                    "pathName": "/pages/about/about",
+                    "query": ""
+                },
+                {
+                    "id": 6,
+                    "name": "disclaimer",
+                    "pathName": "/pages/disclaimer/disclaimer",
+                    "query": ""
+                },
+                {
+                    "id": 7,
+                    "name": "disclaimer",
+                    "pathName": "/pages/disclaimer/disclaimer",
+                    "query": ""
+                },
+                {
+                    "id": 8,
+                    "name": "feedback",
+                    "pathName": "/pages/feedback/feedback",
+                    "query": ""
+                },
+                {
+                    "name": "pages/login/login",
+                    "pathName": "pages/login/login",
+                    "query": "",
+                    "scene": null
+                }
+            ]
+        }
+    }
+}

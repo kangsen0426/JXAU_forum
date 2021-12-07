@@ -21,7 +21,9 @@
     "pages/user-agreement/user-agreement",
     "pages/privacy/privacy",
     "pages/about/about",
-    "pages/u-avater-cropper/u-avatar-cropper"
+    "pages/u-avater-cropper/u-avatar-cropper",
+    "pages/login/login",
+    "pages/searchResult/searchResult"
   ],
   "subPackages": [],
   "window": {

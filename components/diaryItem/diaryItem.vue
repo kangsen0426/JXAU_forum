@@ -25,6 +25,7 @@
 				</view>
 				
 				<view :class="[list.type ? 'type type2' : 'type']" v-if="list.circle === '失物招领'">{{list.type ? '找失主' : '找拾主'}}</view>
+				<view class="type" v-if="list.adudit != undefined">审核中</view>
 			</view>
 		</view>
 		<view class="diary_content" @click="toContentDetail">

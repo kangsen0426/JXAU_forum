@@ -102,6 +102,10 @@
 				
 				//跳转查询数据
 				
+				uni.navigateTo({
+					url:`../searchResult/searchResult?key=${this.search}`
+				})
+				
 			},
 			deletehistory(index){
 				this.history.splice(index,1)

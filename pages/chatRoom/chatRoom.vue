@@ -31,7 +31,7 @@
 						<view class="left_item" v-if="!item.myself">
 							<view class="avatar">
 								<image mode="aspectFill"
-									src="http://ksimagebed.oss-cn-hangzhou.aliyuncs.com/imgbed/2021-11-22-23%3A41%3A42-71a0b5850d5668da2c4a55b085e75d80.jpg">
+									src="https://s3.bmp.ovh/imgs/2021/12/d76321bafd236500.jpg">
 								</image>
 							</view>
 							<view class="message">
@@ -47,7 +47,7 @@
 							</view>
 							<view class="avatar">
 								<image mode="aspectFill"
-									src="http://ksimagebed.oss-cn-hangzhou.aliyuncs.com/imgbed/2021-11-22-23%3A41%3A42-71a0b5850d5668da2c4a55b085e75d80.jpg">
+									src="http://ksimagebed.oss-cn-hangzhou.aliyuncs.com/imgbed/2021-12-6-19%3A59%3A37-deb384f94227cc5fb817d5dccf142ed0.jpg">
 								</image>
 							</view>
 						</view>
@@ -90,16 +90,17 @@
 						autheid: 1215,
 						messageid: 66,
 						myself: false,
-						time: "Tue Nov 23 2021 17:51:01 GMT+0800 (中国标准时间)",
-						content: '还不快点写！'
-					},
-					{
-						autheid: 1245,
-						messageid: 77,
-						myself: true,
-						time: "Tue Nov 23 2021 18:01:01 GMT+0800 (中国标准时间)",
-						content: '友友们88 我要睡觉了~ 😎'
+						time: "Tue Dec 23 2021 17:51:01 GMT+0800 (中国标准时间)",
+						content: '你在干嘛'
 					}
+					// ,
+					// {
+					// 	autheid: 1245,
+					// 	messageid: 77,
+					// 	myself: true,
+					// 	time: "Tue Dec 23 2021 18:01:01 GMT+0800 (中国标准时间)",
+					// 	content: '友友们88 我要睡觉了~ 😎'
+					// }
 				]
 			};
 		},
@@ -245,6 +246,27 @@
 				this.gotoView(1)
 
 				this.message = ''
+				
+				
+				
+				setTimeout(()=>{
+					
+					let messageObj2 = {
+						autheid: 1215,
+						messageid: this.messageList[this.messageList.length - 1].messageid + 1,
+						myself: false,
+						time: new Date(),
+						content: "那好吧"
+					}
+					
+					messageObj2 = this.handleMessage(messageObj2)
+					
+					this.messageList.push(messageObj2);
+					
+					
+				},3000)
+				
+				this.gotoView(1)
 
 
 			},

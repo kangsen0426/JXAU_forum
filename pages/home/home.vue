@@ -162,6 +162,7 @@ import diaryItem from "../../components/diaryItem/diaryItem.vue"
 								circleid:8113,
 								comments: 23,
 								commentsData: [],
+								adudit:true,
 								location: {
 									longitude: 115.8587658,
 									latitude: 28.7591635,

@@ -16,6 +16,10 @@
 										src="https://ksimagebed.oss-cn-hangzhou.aliyuncs.com/imgbed/2021-11-21-11%3A37%3A19b3fc7646cfcfe4286d7913b7b2639d93.jpg"
 										border-radius="50%">
 									</u-image>
+									<u-image v-else-if="index1 === 4" width="100%" height="100%"
+										src="https://s3.bmp.ovh/imgs/2021/12/d76321bafd236500.jpg"
+										border-radius="50%">
+									</u-image>
 								</view>
 							</view>
 							<view class="right">
@@ -65,6 +69,12 @@
 						name: "官方客服",
 						type:1,
 						newmessage: 0
+					},
+					{
+						id: 512,
+						name: "大橘猫",
+						type:1,
+						newmessage: 1
 					}
 				]
 			}
@@ -74,6 +84,10 @@
 		},
 		methods: {
 			chart(item){
+				
+				this.systemList[4].newmessage = 0
+				
+				
 				uni.navigateTo({
 					url:`../chatRoom/chatRoom?id=${item.id}&name=${item.name}&type=${item.type}`
 				})
