@@ -2159,7 +2159,7 @@ function normalizeComponent (
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _vue = _interopRequireDefault(__webpack_require__(/*! vue */ 2));
+/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _vue = _interopRequireDefault(__webpack_require__(/*! vue */ 2));
 var _vuex = _interopRequireDefault(__webpack_require__(/*! vuex */ 13));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
 _vue.default.use(_vuex.default);
 var store = new _vuex.default.Store({
@@ -2204,29 +2204,51 @@ var store = new _vuex.default.Store({
       selectedIconPath: "account-fill",
       text: '我的',
 
-      customIcon: false }] },
+      customIcon: false }],
 
+
+    userInfo: uni.getStorageSync("__USER_INFO") || {
+      name: "康僧",
+      avatar: "http://ksimagebed.oss-cn-hangzhou.aliyuncs.com/imgbed/2021-12-6-22%3A35%3A7-cfb2b2b49b2ea762d6b643650f115c72.jpg",
+      birthday: "2000-03-15",
+      intro: "哈哈哈哈",
+      bg: "https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fpic1.win4000.com%2Fmobile%2F2018-11-06%2F5be0f564235b7.jpg&refer=http%3A%2F%2Fpic1.win4000.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=jpeg?sec=1639892174&t=95ba842e962b829ed0f19d6856a4b047" } },
 
 
   getters: {
     getTabBar: function getTabBar(state) {
       return state.tabBarlist;
     },
+
     getCurrentSelect: function getCurrentSelect(state) {
       return state.currentSelect;
     } },
 
   mutations: {
     changeCurrentSelect: function changeCurrentSelect(state, name) {
+
       state.currentSelect = name;
+
+    },
+    GET_USER_INFO: function GET_USER_INFO(state, payload) {
+      state.userInfo = payload;
+
     } },
 
-  actions: {} });var _default =
+
+  actions: {
+    set_userInfo: function set_userInfo(_ref,
+
+    payload) {var commit = _ref.commit;
+      uni.setStorageSync("__USER_INFO", payload);
+      commit('GET_USER_INFO', payload);
+    } } });var _default =
 
 
 
 
 store;exports.default = _default;
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
 
 /***/ }),
 

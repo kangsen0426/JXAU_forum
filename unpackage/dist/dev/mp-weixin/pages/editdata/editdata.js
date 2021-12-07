@@ -181,61 +181,65 @@ __webpack_require__.r(__webpack_exports__);
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0; //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-var _default =
+/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+var _vuex = __webpack_require__(/*! vuex */ 13);function ownKeys(object, enumerableOnly) {var keys = Object.keys(object);if (Object.getOwnPropertySymbols) {var symbols = Object.getOwnPropertySymbols(object);if (enumerableOnly) symbols = symbols.filter(function (sym) {return Object.getOwnPropertyDescriptor(object, sym).enumerable;});keys.push.apply(keys, symbols);}return keys;}function _objectSpread(target) {for (var i = 1; i < arguments.length; i++) {var source = arguments[i] != null ? arguments[i] : {};if (i % 2) {ownKeys(Object(source), true).forEach(function (key) {_defineProperty(target, key, source[key]);});} else if (Object.getOwnPropertyDescriptors) {Object.defineProperties(target, Object.getOwnPropertyDescriptors(source));} else {ownKeys(Object(source)).forEach(function (key) {Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key));});}}return target;}function _defineProperty(obj, key, value) {if (key in obj) {Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true });} else {obj[key] = value;}return obj;}var _default =
 {
   data: function data() {
     return {
+      avatar: 'https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fwww.91ye.cn%2FFileUpload%2Fixncfkctiwn.jpg&refer=http%3A%2F%2Fwww.91ye.cn&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=jpeg?sec=1639892114&t=d2dc977adbd4382ce4cb1f9d1db9c6c2',
+
       //这里要用后端服务器的地址，这是组件默认的演示地址，会报错
 
-      action: 'http://www.example.com/upload',
+      action: 'http://ksimgbedapi.ks.jxauqt.cn/upload/uploadimg',
       fileList: [{
         url: 'http://pics.sc.chinaz.com/files/pic/pic9/201912/hpic1886.jpg' }],
 
-      src: 'https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fwww.91ye.cn%2FFileUpload%2Fixncfkctiwn.jpg&refer=http%3A%2F%2Fwww.91ye.cn&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=jpeg?sec=1639892114&t=d2dc977adbd4382ce4cb1f9d1db9c6c2',
       params: {
         year: true,
         month: true,
@@ -245,23 +249,80 @@ var _default =
         second: false },
 
 
-      show: false,
-      form: {
-        name: '',
-        intro: '',
-        birthday: '' } };
-
+      show: false };
 
 
 
 
   },
-  methods: {
+  computed: _objectSpread({},
+  (0, _vuex.mapState)(['userInfo'])),
+
+  created: function created() {var _this2 = this;
+    console.log(this.getUserInfo);
+    // this.userInfo = this.getUserInfo;
+    this.fileList = [{
+      url: this.userInfo.bg }];
+
+    console.log(this.fileList);
+    var _this = this;
+    this.avatar = uni.getStorageSync("username-avatar");
+    // 监听从裁剪页发布的事件，获得裁剪结果
+    uni.$on('uAvatarCropper', function (path) {
+      _this.avatar = path;
+      // 可以在此上传到服务端
+      uni.uploadFile({
+        url: 'http://ksimgbedapi.ks.jxauqt.cn/upload/uploadimg',
+        filePath: path,
+        name: 'file',
+        complete: function complete(res) {
+          console.log(JSON.parse(res.data));
+          var avatar = JSON.parse(res.data).success[0];
+          _this.avatar = avatar;
+          console.log(avatar);
+          // uni.setStorageSync("username-avatar",avatar)
+          _this2.set_userInfo(_objectSpread(_objectSpread({},
+          _this2.userInfo), {}, {
+            avatar: avatar }));
+
+        } });
+
+    });
+  },
+  methods: _objectSpread(_objectSpread({},
+  (0, _vuex.mapActions)(['set_userInfo'])), {}, {
     confirm: function confirm(e) {
       console.log(e);
       this.form.birthday = e.year + '年' + e.month + '月' + e.day + '日';
 
-    } } };exports.default = _default;
+    },
+    uploadSuccess: function uploadSuccess(e) {
+      console.log(e);
+      var bg = e.success[0];
+      console.log(bg);
+      this.set_userInfo(_objectSpread(_objectSpread({},
+      this.userInfo), {}, {
+        bg: bg }));
+
+    },
+    chooseAvatar: function chooseAvatar() {
+      console.log(1);
+      // 此为uView的跳转方法，详见"文档-JS"部分，也可以用uni的uni.navigateTo
+      this.$u.route({
+        // 关于此路径，请见下方"注意事项"
+        url: '/pages/u-avater-cropper/u-avatar-cropper?destWidth=300&rectWidth=300&fileType=png',
+        // 内部已设置以下默认参数值，可不传这些参数
+        params: {
+          // 输出图片宽度，高等于宽，单位px
+          destWidth: 300,
+          // 裁剪框宽度，高等于宽，单位px
+          rectWidth: 200,
+          // 输出的图片类型，如果'png'类型发现裁剪的图片太大，改成"jpg"即可
+          fileType: 'jpg' } });
+
+
+    } }) };exports.default = _default;
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
 
 /***/ }),
 

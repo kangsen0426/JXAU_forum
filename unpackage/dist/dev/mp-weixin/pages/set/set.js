@@ -194,6 +194,8 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
 var _default =
 {
   data: function data() {
@@ -227,6 +229,11 @@ var _default =
     ToUserAgreement: function ToUserAgreement() {
       uni.navigateTo({
         url: '../user-agreement/user-agreement' });
+
+    },
+    toStudentAuth: function toStudentAuth() {
+      uni.navigateTo({
+        url: "../authenticationPage/authenticationPage" });
 
     },
     //免责声明

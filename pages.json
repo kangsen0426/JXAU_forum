@@ -24,6 +24,14 @@
 			}
 		},
 		{
+			"path": "pages/authenticationPage/authenticationPage",
+			"style": {
+				"navigationBarTitleText": "学生认证",
+				"enablePullDownRefresh": false
+			}
+		
+		},
+		{
 			"path": "pages/add/add",
 			"style": {
 				"navigationBarTitleText": "uni-app",
@@ -186,7 +194,15 @@
                 "enablePullDownRefresh": false
             }
             
-        }
+        },
+		{
+			"path": "pages/u-avater-cropper/u-avatar-cropper",
+			"style": {
+				"navigationBarTitleText": "头像裁剪",
+				"navigationBarBackgroundColor": "#000000"
+			}
+		}
+
     ],
 
 	"globalStyle": {

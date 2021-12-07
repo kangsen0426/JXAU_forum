@@ -64,4 +64,18 @@ page {
 .main .bgd {
   margin-top: 30rpx;
 }
+.main .wrap {
+  padding: 40rpx;
+}
+.main .u-avatar-wrap {
+  margin-top: 80rpx;
+  overflow: hidden;
+  margin-bottom: 80rpx;
+  text-align: center;
+}
+.main .u-avatar-demo {
+  width: 150rpx;
+  height: 150rpx;
+  border-radius: 100rpx;
+}
 

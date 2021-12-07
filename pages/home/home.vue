@@ -1,6 +1,7 @@
 <template>
 	<view class="content home">
-		<view class="fixed-bg"></view>
+		<view class="fixed-bg" :style="{backgroundImage:'url('+userInfo.bg+')'}"></view>
+	
 		<u-navbar title="name" back-icon-name='scan' :background="{background:'rgba(0,0,0,0)'}" :border-bottom='false'
 			back-icon-color='white' title-color='white'></u-navbar>
 		<!-- 		<view class="nav-tabbar">
@@ -11,9 +12,10 @@
 			<scroll-view scroll-y="true" style="height: 100%;">
 				<view class="avatar">
 					<view>
-						<u-avatar :src="src" size='large'></u-avatar>
+						
+						<u-avatar :show-level='true' :src="userInfo.avatar" size='large' @click='ToEditdata' level-icon='level'></u-avatar>
 					</view>
-					<view class="bbb"><text>name</text></view>
+					<view class="bbb"><text>{{'康僧'}}</text></view>
 				</view>
 				<view class="bottom">
 					<view class="bottom-left">
@@ -50,18 +52,20 @@
 
 
 					<view class="card-main">
-						{{contentList}}
+			
 						<view class="drmaic-main" v-if="current== 0">
 							<view v-if="contentList.length == 0" class="empty">
 								<image
 									src="https://vkceyugu.cdn.bspapp.com/VKCEYUGU-6867bdee-20ed-4501-aaff-ace5f5bc6ea5/1bd64c86-1c89-431c-b23d-c3b5ff845e8e.jpg"
 									mode="aspectFill"></image>
 								<view class="btn-issue">
-									<u-button shape="square" size="medium" :ripple="true">立即发布</u-button>
+									<u-button shape="square" size="medium" :ripple="true" @click="navToPublish">立即发布</u-button>
 								</view>
 							</view>
 							<view class="drmaic-item" v-for="(item ,i) in contentList" :key="item.id">
-
+								
+									<diary-item :list="{...item,avatar:userInfo.avatar}" @togglelike="togglelike" @togglefolow="togglefolow"
+										@togglecollect="togglecollect" @report="report" @todetail="todetail" @checklocation="checklocation" @tocirclepage="tocirclepage" @touserdetail="userdetail"></diary-item>
 							</view>
 							<!-- oooooo -->
 						</view>
@@ -116,45 +120,112 @@
 <script>
 	import {
 		mapMutations,
-		mapGetters
+		mapGetters,
+		mapState,
 	} from 'vuex';
-
+import diaryItem from "../../components/diaryItem/diaryItem.vue"
+	
 	export default {
+		components:{
+		diaryItem	
+		},
+		computed: {
+			...mapGetters(['getTabBar']),
+			...mapState(['userInfo'])
+		},
 		data() {
 			return {
-				src: 'https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fwww.91ye.cn%2FFileUpload%2Fixncfkctiwn.jpg&refer=http%3A%2F%2Fwww.91ye.cn&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=jpeg?sec=1639892114&t=d2dc977adbd4382ce4cb1f9d1db9c6c2',
+				avatar: 'https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fwww.91ye.cn%2FFileUpload%2Fixncfkctiwn.jpg&refer=http%3A%2F%2Fwww.91ye.cn&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=jpeg?sec=1639892114&t=d2dc977adbd4382ce4cb1f9d1db9c6c2',
 				list: [{
 						name: '动态',
-						count: 5
+						count: 1
 					}, {
 						name: '收藏',
-						count: 5
+						count: 0
 					}, {
 						name: '喜欢',
-						count: 5
+						count: 0
 					},
-					{
-						name: '打赏',
-						count: 5
-					}
+					// {
+					// 	name: '打赏',
+					// 	count: 5
+					// }
 				],
 				current: 0,
-				contentList: [
+				contentList: [{
+								id: 561,
+								userid: 7821,
+								username: "康僧",
+								following: false,
+								collect: false,
+								circle: '美食',
+								circleid:8113,
+								comments: 23,
+								commentsData: [],
+								location: {
+									longitude: 115.8587658,
+									latitude: 28.7591635,
+								},
+								avatar:'https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fwww.91ye.cn%2FFileUpload%2Fixncfkctiwn.jpg&refer=http%3A%2F%2Fwww.91ye.cn&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=jpeg?sec=1639892114&t=d2dc977adbd4382ce4cb1f9d1db9c6c2',
+								badge: [],
+								content: "我自己发布的哈哈哈哈",
+								imgArray: [
+									"https://s3.bmp.ovh/imgs/2021/11/91650c5bd05e52d2.jpg",
+									"https://s3.bmp.ovh/imgs/2021/11/12628cf8aa4a62c7.jpg",
+									
+								]
+							}
 
-				],
+						]
+					
 			}
 		},
 		onLoad() {
-
+			// this.avatar = uni.getStorageSync("username-avatar")
+			console.log(this.$store.state)
+		
+		},
+		create(){
+				// this.avatar = uni.getStorageSync("username-avatar")
 		},
 		methods: {
 			...mapMutations([]),
 			change(index) {
 				this.current = index;
+				console.log(index)
+				if(index === 0){
+					this.getDymaic()
+				}else{
+					this.contentList = []
+				}
 
 			},
 			getDymaic() {
-				this.contentList = [] // 调用获取 getDymaic
+				this.contentList =  [{
+								id: 561,
+								userid: 7821,
+								username: "康僧",
+								following: false,
+								collect: false,
+								circle: '美食',
+								circleid:8113,
+								comments: 23,
+								commentsData: [],
+								location: {
+									longitude: 115.8587658,
+									latitude: 28.7591635,
+								},
+								avatar:'https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fwww.91ye.cn%2FFileUpload%2Fixncfkctiwn.jpg&refer=http%3A%2F%2Fwww.91ye.cn&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=jpeg?sec=1639892114&t=d2dc977adbd4382ce4cb1f9d1db9c6c2',
+								badge: [],
+								content: "我自己发布的哈哈哈哈",
+								imgArray: [
+									"https://s3.bmp.ovh/imgs/2021/11/91650c5bd05e52d2.jpg",
+									"https://s3.bmp.ovh/imgs/2021/11/12628cf8aa4a62c7.jpg",
+									
+								]
+							}
+
+						] // 调用获取 getDymaic
 			},
 			getCollect() {
 				this.contentList = [] // 调用获取 getCollect
@@ -164,6 +235,14 @@
 			},
 			getMoney() {
 				this.contentList = [] // 调用获取 getLike
+			},
+			navToPublish(){
+					uni.switchTab({
+						url: '../add/add',
+						success: res => {},
+						fail: () => {},
+						complete: () => {}
+					});
 			},
 			ToEditdata() {
 				uni.navigateTo({
@@ -177,9 +256,7 @@
 			},
 
 		},
-		computed: {
-			...mapGetters(['getTabBar'])
-		},
+		
 	}
 </script>
 <style>

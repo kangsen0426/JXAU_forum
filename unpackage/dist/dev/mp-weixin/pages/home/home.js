@@ -134,6 +134,26 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
+  var l0 =
+    _vm.current == 0
+      ? _vm.__map(_vm.contentList, function(item, i) {
+          var $orig = _vm.__get_orig(item)
+
+          var a0 = Object.assign({}, item, { avatar: _vm.userInfo.avatar })
+          return {
+            $orig: $orig,
+            a0: a0
+          }
+        })
+      : null
+  _vm.$mp.data = Object.assign(
+    {},
+    {
+      $root: {
+        l0: l0
+      }
+    }
+  )
 }
 var recyclableRender = false
 var staticRenderFns = []
@@ -283,47 +303,118 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-var _vuex = __webpack_require__(/*! vuex */ 13);function ownKeys(object, enumerableOnly) {var keys = Object.keys(object);if (Object.getOwnPropertySymbols) {var symbols = Object.getOwnPropertySymbols(object);if (enumerableOnly) symbols = symbols.filter(function (sym) {return Object.getOwnPropertyDescriptor(object, sym).enumerable;});keys.push.apply(keys, symbols);}return keys;}function _objectSpread(target) {for (var i = 1; i < arguments.length; i++) {var source = arguments[i] != null ? arguments[i] : {};if (i % 2) {ownKeys(Object(source), true).forEach(function (key) {_defineProperty(target, key, source[key]);});} else if (Object.getOwnPropertyDescriptors) {Object.defineProperties(target, Object.getOwnPropertyDescriptors(source));} else {ownKeys(Object(source)).forEach(function (key) {Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key));});}}return target;}function _defineProperty(obj, key, value) {if (key in obj) {Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true });} else {obj[key] = value;}return obj;}var _default =
+
+
+
+
+var _vuex = __webpack_require__(/*! vuex */ 13);function ownKeys(object, enumerableOnly) {var keys = Object.keys(object);if (Object.getOwnPropertySymbols) {var symbols = Object.getOwnPropertySymbols(object);if (enumerableOnly) symbols = symbols.filter(function (sym) {return Object.getOwnPropertyDescriptor(object, sym).enumerable;});keys.push.apply(keys, symbols);}return keys;}function _objectSpread(target) {for (var i = 1; i < arguments.length; i++) {var source = arguments[i] != null ? arguments[i] : {};if (i % 2) {ownKeys(Object(source), true).forEach(function (key) {_defineProperty(target, key, source[key]);});} else if (Object.getOwnPropertyDescriptors) {Object.defineProperties(target, Object.getOwnPropertyDescriptors(source));} else {ownKeys(Object(source)).forEach(function (key) {Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key));});}}return target;}function _defineProperty(obj, key, value) {if (key in obj) {Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true });} else {obj[key] = value;}return obj;}var diaryItem = function diaryItem() {__webpack_require__.e(/*! require.ensure | components/diaryItem/diaryItem */ "components/diaryItem/diaryItem").then((function () {return resolve(__webpack_require__(/*! ../../components/diaryItem/diaryItem.vue */ 267));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};var _default =
+
+
 
 
 
 
 {
+  components: {
+    diaryItem: diaryItem },
+
+  computed: _objectSpread(_objectSpread({},
+  (0, _vuex.mapGetters)(['getTabBar'])),
+  (0, _vuex.mapState)(['userInfo'])),
+
   data: function data() {
     return {
-      src: 'https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fwww.91ye.cn%2FFileUpload%2Fixncfkctiwn.jpg&refer=http%3A%2F%2Fwww.91ye.cn&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=jpeg?sec=1639892114&t=d2dc977adbd4382ce4cb1f9d1db9c6c2',
+      avatar: 'https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fwww.91ye.cn%2FFileUpload%2Fixncfkctiwn.jpg&refer=http%3A%2F%2Fwww.91ye.cn&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=jpeg?sec=1639892114&t=d2dc977adbd4382ce4cb1f9d1db9c6c2',
       list: [{
         name: '动态',
-        count: 5 },
+        count: 1 },
       {
         name: '收藏',
-        count: 5 },
+        count: 0 },
       {
         name: '喜欢',
-        count: 5 },
+        count: 0 }
 
-      {
-        name: '打赏',
-        count: 5 }],
-
-
+      // {
+      // 	name: '打赏',
+      // 	count: 5
+      // }
+      ],
       current: 0,
-      contentList: [] };
+      contentList: [{
+        id: 561,
+        userid: 7821,
+        username: "康僧",
+        following: false,
+        collect: false,
+        circle: '美食',
+        circleid: 8113,
+        comments: 23,
+        commentsData: [],
+        location: {
+          longitude: 115.8587658,
+          latitude: 28.7591635 },
+
+        avatar: 'https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fwww.91ye.cn%2FFileUpload%2Fixncfkctiwn.jpg&refer=http%3A%2F%2Fwww.91ye.cn&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=jpeg?sec=1639892114&t=d2dc977adbd4382ce4cb1f9d1db9c6c2',
+        badge: [],
+        content: "我自己发布的哈哈哈哈",
+        imgArray: [
+        "https://s3.bmp.ovh/imgs/2021/11/91650c5bd05e52d2.jpg",
+        "https://s3.bmp.ovh/imgs/2021/11/12628cf8aa4a62c7.jpg"] }] };
+
+
+
+
 
 
 
   },
   onLoad: function onLoad() {
+    // this.avatar = uni.getStorageSync("username-avatar")
+    console.log(this.$store.state);
 
+  },
+  create: function create() {
+    // this.avatar = uni.getStorageSync("username-avatar")
   },
   methods: _objectSpread(_objectSpread({},
   (0, _vuex.mapMutations)([])), {}, {
     change: function change(index) {
       this.current = index;
+      console.log(index);
+      if (index === 0) {
+        this.getDymaic();
+      } else {
+        this.contentList = [];
+      }
 
     },
     getDymaic: function getDymaic() {
-      this.contentList = []; // 调用获取 getDymaic
+      this.contentList = [{
+        id: 561,
+        userid: 7821,
+        username: "康僧",
+        following: false,
+        collect: false,
+        circle: '美食',
+        circleid: 8113,
+        comments: 23,
+        commentsData: [],
+        location: {
+          longitude: 115.8587658,
+          latitude: 28.7591635 },
+
+        avatar: 'https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fwww.91ye.cn%2FFileUpload%2Fixncfkctiwn.jpg&refer=http%3A%2F%2Fwww.91ye.cn&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=jpeg?sec=1639892114&t=d2dc977adbd4382ce4cb1f9d1db9c6c2',
+        badge: [],
+        content: "我自己发布的哈哈哈哈",
+        imgArray: [
+        "https://s3.bmp.ovh/imgs/2021/11/91650c5bd05e52d2.jpg",
+        "https://s3.bmp.ovh/imgs/2021/11/12628cf8aa4a62c7.jpg"] }];
+
+
+
+
+      // 调用获取 getDymaic
     },
     getCollect: function getCollect() {
       this.contentList = []; // 调用获取 getCollect
@@ -334,6 +425,14 @@ var _vuex = __webpack_require__(/*! vuex */ 13);function ownKeys(object, enumera
     getMoney: function getMoney() {
       this.contentList = []; // 调用获取 getLike
     },
+    navToPublish: function navToPublish() {
+      uni.switchTab({
+        url: '../add/add',
+        success: function success(res) {},
+        fail: function fail() {},
+        complete: function complete() {} });
+
+    },
     ToEditdata: function ToEditdata() {
       uni.navigateTo({
         url: '../editdata/editdata' });
@@ -343,11 +442,7 @@ var _vuex = __webpack_require__(/*! vuex */ 13);function ownKeys(object, enumera
       uni.navigateTo({
         url: '../set/set' });
 
-    } }),
-
-
-  computed: _objectSpread({},
-  (0, _vuex.mapGetters)(['getTabBar'])) };exports.default = _default;
+    } }) };exports.default = _default;
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
 
 /***/ }),
