@@ -132,6 +132,7 @@ page .content .u-menu-wrap .right {
   display: flex;
   flex-wrap: wrap;
   padding-left: 10rpx;
+  position: relative;
 }
 page .content .u-menu-wrap .right .name {
   width: 100%;
@@ -153,5 +154,15 @@ page .content .u-menu-wrap .right .desc {
   width: 100%;
   font-size: 24rpx;
   color: #c7c7c7;
+}
+page .content .u-menu-wrap .right .selectBtn {
+  position: absolute;
+  right: 0;
+  top: 30rpx;
+  padding: 10rpx;
+  font-size: 26rpx;
+  background-color: #5098FF;
+  color: #fff;
+  border-radius: 20rpx;
 }
 

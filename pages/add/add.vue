@@ -35,7 +35,7 @@
 							<span>圈子</span>
 						</view>
 						<view class="right">
-							<span>选择圈子</span>
+							<span>{{getCurrentSelect === '' ? '选择圈子' : getCurrentSelect}}</span>
 							<i class="iconfont icon-jiantou"></i>
 						</view>
 					</view>
@@ -49,6 +49,16 @@
 							<i class="iconfont icon-jiantou"></i>
 						</view>
 					</view>
+					<view class="item" @click="choosetype">
+						<view class="left">
+							<i class="iconfont icon-xiaolian"></i>
+							<span>类型</span>
+						</view>
+						<view class="right">
+							<span>{{selectType === '' ? '请选择类型类型' : selectType}}</span>
+							<i class="iconfont icon-jiantou"></i>
+						</view>
+					</view>
 
 				</view>
 			</scroll-view>
@@ -59,6 +69,10 @@
 			</view>
 		</view>
 
+		<u-popup v-model="popupshow" mode="bottom" border-radius="20">
+			<view class="option" @click="chooseOne(0)">找拾主</view>
+			<view class="option option_last" @click="chooseOne(1)">找失主</view>
+		</u-popup>
 
 		<u-tabbar :list="getTabBar" active-color="#5098FF"></u-tabbar>
 	</view>
@@ -74,6 +88,8 @@
 		data() {
 			return {
 				content: "",
+				selectType: '',
+				popupshow: false,
 				uploadimgList: []
 			}
 		},
@@ -81,6 +97,18 @@
 
 		},
 		methods: {
+			chooseOne(type) {
+				if (type) {
+					this.selectType = '找失主'
+				} else {
+					this.selectType = '找拾主'
+				}
+				
+				this.popupshow = false
+			},
+			choosetype() {
+				this.popupshow = true
+			},
 			chhooseImage() {
 				let self = this
 				uni.chooseImage({
@@ -100,7 +128,7 @@
 			},
 			chooseCircle() {
 				uni.navigateTo({
-					url: "../allcirclepage/allcirclepage"
+					url: "../allcirclepage/allcirclepage?type=1"
 				})
 			},
 			chooseLocation() {
@@ -115,7 +143,7 @@
 			}
 		},
 		computed: {
-			...mapGetters(['getTabBar'])
+			...mapGetters(['getTabBar', 'getCurrentSelect'])
 		}
 	}
 </script>
@@ -267,11 +295,28 @@
 					align-items: center;
 
 					background-color: #5098FF;
-					
-					i{
+
+					i {
 						margin-right: 10rpx;
 					}
 				}
+			}
+
+			.option {
+				height: 120rpx;
+				text-align: center;
+				line-height: 120rpx;
+				font-weight: bold;
+				background-color: #fff;
+				border-bottom: 1rpx solid rgba(0, 0, 0, 0.1);
+
+				&:active {
+					background-color: rgba(0, 0, 0, 0.1);
+				}
+			}
+
+			.option_last {
+				border: none;
 			}
 
 

@@ -24,10 +24,12 @@
 
 			<swiper class="swiper" :current="tabs.current" @change="swiperchange">
 				<swiper-item v-for="item1 in tabsListData" :key='item1.id'>
-					<scroll-list>
+					<scroll-list @bottomrefersh="pushData">
 						<view v-for="item2 in item1.list" :key="item2.id">
 							<diary-item :list="item2" @togglelike="togglelike" @togglefolow="togglefolow"
-								@togglecollect="togglecollect" @report="report" @todetail="todetail" @checklocation="checklocation" @tocirclepage="tocirclepage" @touserdetail="userdetail"></diary-item>
+								@togglecollect="togglecollect" @report="report" @todetail="todetail"
+								@checklocation="checklocation" @tocirclepage="tocirclepage" @touserdetail="userdetail">
+							</diary-item>
 						</view>
 					</scroll-list>
 				</swiper-item>
@@ -66,7 +68,7 @@
 		</view>
 
 
-		<u-tabbar :list="getTabBar"  active-color="#5098FF"></u-tabbar>
+		<u-tabbar :list="getTabBar" active-color="#5098FF"></u-tabbar>
 	</view>
 </template>
 
@@ -78,6 +80,10 @@
 	import scrollList from "../../components/scrolllist/scrolllist.vue"
 	import diaryItem from "../../components/diaryItem/diaryItem.vue"
 	import mypopup from "../../components/mypopup/mypopup.vue"
+
+
+	import recommendData from "../../testData/index.js"
+
 	export default {
 		components: {
 			scrollList,
@@ -136,77 +142,89 @@
 						name: '更长长长长长长长长长长长的一个tag'
 					}
 				],
-				tabsListData: [{
-						name: '关注',
-						id: 822,
-						list: [{
-								id: 561,
-								userid: 7821,
-								username: "ksks",
-								following: false,
-								collect: false,
-								circle: '美食',
-								circleid:8113,
-								comments: 23,
-								commentsData: [],
-								location: {
-									longitude: 115.8587658,
-									latitude: 28.7591635,
-								},
-								avatar: "https://s3.bmp.ovh/imgs/2021/11/f0007619e29465d0.jpg",
-								badge: [],
-								content: "范家发为范家发为比办公空间不可被概括为对的范家发为比办对的范家发为比办对的范家发为比办对的范公空间不可被概括为比办公空范家发为范家发为比办公空间不可被概括为对的范家发为比办对的范家发为比办对的范家发为比办对的范公空间不可被概括为比办公空间不可被概括为间不可被概括为",
-								imgArray: [
-									"https://s3.bmp.ovh/imgs/2021/11/91650c5bd05e52d2.jpg",
-									"https://s3.bmp.ovh/imgs/2021/11/12628cf8aa4a62c7.jpg",
-									"https://s3.bmp.ovh/imgs/2021/11/e2598f87131a75db.png",
-									"https://s3.bmp.ovh/imgs/2021/11/6deded1a6fb9c0f9.png",
-									"https://s3.bmp.ovh/imgs/2021/11/f0007619e29465d0.jpg",
-									"https://s3.bmp.ovh/imgs/2021/11/ead26623c4006561.jpg",
-									"https://s3.bmp.ovh/imgs/2021/11/bf8fffd2a4f239ef.jpg"
-								]
-							}
-
-						]
-					},
-					{
-						name: '推荐',
-						id: 366,
-						list: [{
-							id: 684,
-							userid: 6347,
-							username: "ksks",
-							following: false,
-							collect: false,
-							circle: '美食',
-							circleid:81413,
-							comments: 23,
-							commentsData: [],
-							location: {
-								longitude: 115.8587658,
-								latitude: 28.7591635,
-							},
-							avatar: "https://s3.bmp.ovh/imgs/2021/11/f0007619e29465d0.jpg",
-							badge: [],
-							content: "范家发为范家发为比办公空间不可被概括为对的范家发为比办对的范家发为比办对的范家发为比办对的范公空间不可被概括为比办公空间不可被概括为",
-							imgArray: [
-								"https://s3.bmp.ovh/imgs/2021/11/f0007619e29465d0.jpg"
-							]
-						}]
-					},
-					{
-						name: '热门',
-						id: 9431,
-						list: []
-					}
-				],
-
+				tabsListData: []
 			}
 		},
 		onLoad() {
-
+			this.tabsListData = recommendData
 		},
 		methods: {
+			pushData() {
+				let list = [{
+						id: 2432,
+						userid: 6347,
+						username: "大肥猫",
+						following: false,
+						collect: false,
+						circle: '学习资料',
+						circleid: 81413,
+						comments: 0,
+						commentsData: [],
+						location: {
+							longitude: 115.8587658,
+							latitude: 28.7591635,
+						},
+						avatar: "http://ksimagebed.oss-cn-hangzhou.aliyuncs.com/imgbed/2021-12-6-20%3A20%3A59-06a021b5737956363f55c59d59479708.jpg",
+						content: "有没有人有概率论的资料啊，期末考试了 复习一下",
+						imgArray: [
+							"http://ksimagebed.oss-cn-hangzhou.aliyuncs.com/imgbed/2021-12-6-20%3A21%3A15-7dc006581ba4796ea35994156e1c2211.jpg",
+						]
+					},
+					{
+						id: 2707,
+						userid: 6347,
+						username: "小耶",
+						following: false,
+						collect: false,
+						circle: '美食',
+						circleid: 81413,
+						comments: 0,
+						commentsData: [],
+						location: {
+							longitude: 115.8587658,
+							latitude: 28.7591635,
+						},
+						avatar: "http://ksimagebed.oss-cn-hangzhou.aliyuncs.com/imgbed/2021-12-6-20%3A23%3A13-3d5be1e1efc0fa750b478a7f277f8118.jpg",
+						content: "简简单单吃一顿",
+						imgArray: [
+							"http://ksimagebed.oss-cn-hangzhou.aliyuncs.com/imgbed/2021-12-6-20%3A24%3A37-734c8c0e329f19733034894c2d1b975a.jpg",
+							"http://ksimagebed.oss-cn-hangzhou.aliyuncs.com/imgbed/2021-12-6-20%3A24%3A37-8714ff1bec9208a40d510dfdb24f605e.jpg"
+						]
+					},
+					{
+						id: 8777,
+						userid: 6347,
+						username: "卤味好吃",
+						following: false,
+						collect: false,
+						circle: '美食',
+						circleid: 81413,
+						comments: 0,
+						commentsData: [],
+						location: {
+							longitude: 115.8587658,
+							latitude: 28.7591635,
+						},
+						avatar: "http://ksimagebed.oss-cn-hangzhou.aliyuncs.com/imgbed/2021-12-6-20%3A28%3A48-679ea5b2ff5d3d4e143733f1bf392e02.jpg",
+						content: "大甲鱼造一个",
+						imgArray: [
+							"http://ksimagebed.oss-cn-hangzhou.aliyuncs.com/imgbed/2021-12-6-20%3A27%3A49-fc700349a369b4b9ca57f6a05279b5ed.jpg"
+						]
+					}
+				]
+
+				setTimeout(() => {
+
+					list.forEach(item => {
+						this.tabsListData[1].list.push(item)
+					})
+
+					console.log(this.tabsListData)
+
+
+				}, 1500)
+
+			},
 			Tabschange(index) {
 
 				//tab点击切换
@@ -268,25 +286,25 @@
 				})
 
 			},
-			checklocation(location){
+			checklocation(location) {
 				uni.openLocation({
-					longitude:location.longitude,
-					latitude:location.latitude
+					longitude: location.longitude,
+					latitude: location.latitude
 				})
 			},
-			tocirclepage(params){
+			tocirclepage(params) {
 				uni.navigateTo({
-					url:`../circledetail/circledetail?id=${params.id}&name=${params.name}`
+					url: `../circledetail/circledetail?id=${params.id}&name=${params.name}`
 				})
 			},
-			userdetail(id){
+			userdetail(id) {
 				uni.navigateTo({
-					url:`../userdetail/userdetail?id=${id}`
+					url: `../userdetail/userdetail?id=${id}`
 				})
 			},
-			tosearchpage(){
+			tosearchpage() {
 				uni.navigateTo({
-					url:"../searchpage/searchpage"
+					url: "../searchpage/searchpage"
 				})
 			}
 
@@ -318,6 +336,7 @@
 				/* flex: 1; */
 				/* 如果您想让slot内容与导航栏左右有空隙 */
 				padding: 0 30rpx;
+
 				.index_search {
 					width: 100%;
 				}

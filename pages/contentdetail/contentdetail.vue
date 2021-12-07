@@ -12,23 +12,48 @@
 
 				<view class="comment_box">
 					<view class="title">评论(32)</view>
-					<comment :fakedata="testData" @maintogglelike="maintogglelike" @togglelike="togglelike" @bigreply="bigreply" @smallreply="smallreply" @touserdetail="userdetail"></comment>
+					<comment :fakedata="testData" @maintogglelike="maintogglelike" @togglelike="togglelike"
+						@bigreply="bigreply" @smallreply="smallreply" @touserdetail="userdetail"
+						@checkallreply="checkallreply"></comment>
 				</view>
 			</scroll-view>
 		</view>
+
+
+		<u-popup class="replyBox" v-model="popupshow" mode="bottom" border-radius="20" height="60%">
+
+
+			<scroll-view scroll-y="true" style="height: 100%;">
+				<view class="item_reply">
+					<view class="left" @click="toUserDetail(item1.userid)">
+						<u-image width="100%" height="100%" :src="currentCheckComment.avatar" border-radius="50%">
+						</u-image>
+					</view>
+					<view class="right" @click="bigReply(item1,index1)">
+						<span
+							@click.stop="toUserDetail(currentCheckComment.userid)">{{currentCheckComment.username}}：</span>{{currentCheckComment.comment}}
+					</view>
+					<view class="right_like" @click="mainTogglelike(item1,index1)">
+						<i
+							:class="['iconfont' ,currentCheckComment.like ? 'icon-xihuan2' : 'icon-xihuan1',currentCheckComment.like ? 'like' : '',]"></i>
+					</view>
+				</view>
+				<reply-list :replylist="currentCheckComment.reply" @togglelike="replytoggleLike"></reply-list>
+			</scroll-view>
+
+		</u-popup>
 
 
 
 		<view class="fake_inp"></view>
 		<view class="bottom_input_wrap" :style="{bottom:inpPosition ? inpPosition : 0 }">
 			<input class="inp" type="text" v-model="inpcontent" :placeholder="placeholder" :focus="inpfocus"
-				@keyboardheightchange="keyboardheightchange" @blur="handleblur" :adjust-position="false" hold-keyboard/>
+				@keyboardheightchange="keyboardheightchange" @blur="handleblur" :adjust-position="false"
+				hold-keyboard />
 			<view class="btn" @click="sendMessage">发送</view>
 		</view>
 
 		<!-- <safe-footer></safe-footer> -->
-
-
 
 
 		<u-top-tips ref="uTips" :navbar-height="statusBarHeight + navbarHeight"></u-top-tips>
@@ -36,17 +61,21 @@
 </template>
 
 <script>
-	
 	import commentData from "../../testData/comments.js"
-	
+
 	import DiaryItem from "../../components/diaryItem/diaryItem.vue"
 	import comment from "../../components/comment/comment.vue"
 	import safeFooter from "../../components/safe-footer/safe-footer.vue"
+
+	import replyList from "../../components/allReply/allReply.vue"
+
+	import contentData from "../../testData/contentdata.js"
 
 	export default {
 		components: {
 			DiaryItem,
 			comment,
+			replyList,
 			safeFooter
 		},
 		data() {
@@ -58,12 +87,17 @@
 				contentID: '',
 				inpfocus: false,
 				placeholder: '',
-				currentReplyID:'',
+				currentReplyID: '',
 				inpPosition: 0,
-				inpcontent:'',
-				
-				testData:commentData,
-				
+				inpcontent: '',
+
+				testData: commentData,
+				popupshow: false,
+				replys: [],
+
+				currentCheckComment: {},
+				currentReplyItemIndex: '',
+
 				content: {
 					id: 561,
 					userid: 7821,
@@ -95,12 +129,43 @@
 		},
 		onLoad(option) {
 			this.contentID = option.id
-			
-			if(this.currentReplyID === ''){
+
+
+			if (this.currentReplyID === '') {
 				this.placeholder = "评论一下吧~"
 			}
+
+
+			contentData.forEach(item => {
+
+				if (this.contentID == item.id) {
+					this.content = item
+				}
+			})
+
+
 		},
 		methods: {
+			replytoggleLike(params) {
+
+
+
+				this.currentCheckComment.reply[params.index].like = !this.currentCheckComment.reply[params.index].like
+			},
+			checkallreply(params) {
+				console.log(params)
+
+				let {
+					item,
+					index
+				} = params
+
+				this.popupshow = true
+
+				this.currentCheckComment = item
+
+				// console.log(this.currentCheckComment)
+			},
 			togglelike(id) {
 
 				console.log("togglelike 文章id为 " + id)
@@ -146,71 +211,141 @@
 					url: `../userdetail/userdetail?id=${id}`
 				})
 			},
-			
+
 			//评论的事件
-			touserdetail(id){
-				
+			touserdetail(id) {
+
 			},
-			maintogglelike(params){
-				
+			maintogglelike(params) {
+
 				this.testData[params.index].like = !this.testData[params.index].like
 			},
-			togglelike(params){
-				this.testData[params.index1].reply[params.index2].like = !this.testData[params.index1].reply[params.index2].like
+			togglelike(params) {
+				this.testData[params.index1].reply[params.index2].like = !this.testData[params.index1].reply[params.index2]
+					.like
 			},
-			bigreply(params){
-				
-				
+			bigreply(params) {
+
+
 				//切换角色了，清空内容
 				this.inpcontent = ''
-				
+
 				//唤起键盘
 				this.inpfocus = true
-				
+
 				//修改input提示信息
-				this.placeholder = "回复 "+ this.testData[params.index].username
+				this.placeholder = "回复 " + this.testData[params.index].username
+				this.currentReplyName = this.testData[params.index].username
 				this.currentReplyID = this.testData[params.index].userid
-				
-				
-				
+
+
+
 			},
-			smallreply(params){
-				
+			smallreply(params) {
+
 				//切换角色了，清空内容
 				this.inpcontent = ''
-				
+
 				//唤起键盘
 				this.inpfocus = true
-				
+
 				//修改input提示信息
-				this.placeholder = "回复 "+ this.testData[params.index1].reply[params.index2].username
+				this.placeholder = "回复 " + this.testData[params.index1].reply[params.index2].username
+				this.currentReplyName = this.testData[params.index1].reply[params.index2].username
 				this.currentReplyID = this.testData[params.index1].reply[params.index2].userid
-				
+
+				this.currentReplyItemIndex = params.index1
+
 			},
-			
-			
+
+
 			keyboardheightchange(e) {
-				
-				
-				
+
+
+
 				this.inpPosition = e.detail.height + 'px'
 			},
-			handleblur(){
-					
+			handleblur() {
+
 				this.inpfocus = false;
 				this.inpPosition = 0
-				
+
 			},
-			sendMessage(){
-				
-				
-				
+			sendMessage() {
+
+
+				if (this.placeholder == '评论一下吧~') {
+
+
+					let messageObj = {
+						userid: 59121,
+						username: "test123",
+						avatar: "http://ksimagebed.oss-cn-hangzhou.aliyuncs.com/imgbed/2021-12-6-19%3A59%3A37-deb384f94227cc5fb817d5dccf142ed0.jpg",
+						comment: this.inpcontent,
+						commentid: (new Date()).getTime(),
+						like: false,
+						reply: []
+					}
+
+					this.testData.unshift(messageObj)
+				} else {
+
+					console.log(this.currentReplyName)
+
+					if (this.currentReplyItemIndex === '') {
+						this.testData.forEach((item, index) => {
+
+							if (item.username == this.currentReplyName) {
+
+
+								console.log(item)
+
+
+								let replyObj = {
+									userid: 59121,
+									username: "test123",
+									avatar: "http://ksimagebed.oss-cn-hangzhou.aliyuncs.com/imgbed/2021-12-6-19%3A59%3A37-deb384f94227cc5fb817d5dccf142ed0.jpg",
+									replyusername: this.currentReplyName,
+									comment: this.inpcontent,
+									commentid: (new Date()).getTime(),
+									like: false,
+								}
+
+								console.log(this.testData[index].reply)
+
+								this.testData[index].reply.unshift(replyObj)
+							}
+
+						})
+					} else {
+						let replyObj = {
+							userid: 59121,
+							username: "test123",
+							avatar: "http://ksimagebed.oss-cn-hangzhou.aliyuncs.com/imgbed/2021-12-6-19%3A59%3A37-deb384f94227cc5fb817d5dccf142ed0.jpg",
+							replyusername: this.currentReplyName,
+							comment: this.inpcontent,
+							commentid: (new Date()).getTime(),
+							like: false,
+						}
+
+						this.testData[this.currentReplyItemIndex].reply.unshift(replyObj)
+					}
+
+
+				}
+
+
+
 				this.clickSend = true
 				this.inpfocus = true
 				this.inpcontent = ''
-				
-				
-				
+				this.currentReplyName = ''
+				this.currentReplyItemIndex = ''
+
+
+
+
+
 			}
 		},
 		computed: {
@@ -293,6 +428,39 @@
 			}
 
 
+		}
+	}
+
+	.replyBox {
+
+		.item_reply {
+			display: flex;
+			flex-wrap: wrap;
+			align-items: center;
+			justify-content: space-between;
+			margin-bottom: 30rpx;
+			padding: 20rpx;
+			background-color: rgba(185, 185, 185, 0.1);
+			// background-color: pink;
+
+			.left {
+				width: 90rpx;
+				height: 90rpx;
+				// background-color: yellow;
+			}
+
+			.right {
+				width: calc(100% - 160rpx);
+				// background-color: green;
+
+				span {
+					font-weight: bold;
+				}
+			}
+
+			.like {
+				color: red;
+			}
 		}
 	}
 </style>

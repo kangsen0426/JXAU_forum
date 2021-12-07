@@ -7,8 +7,11 @@
 			:refresher-threshold='10' @refresherrestore="refresherrestore" :refresher-triggered="refresherTriggered"
 			@refresherrefresh="refresherrefresh" @scrolltolower="scrolltolower">
 			<slot></slot>
+			<view class="isloading">
+				<u-loading :show="true" size="36" color="#5098FF"></u-loading>
+			</view>
 		</scroll-view>
-
+		
 	</view>
 </template>
 
@@ -23,7 +26,16 @@
 			};
 		},
 		methods: {
-			   
+			refresherrefresh() {
+				this.refresherTriggered = true
+
+				setTimeout(() => {
+					this.refresherTriggered = false
+				}, 2000)
+			},
+			scrolltolower(){
+				this.$emit('bottomrefersh')
+			}
 		}
 	}
 </script>
@@ -45,14 +57,14 @@
 
 		.isloading {
 			height: 45rpx;
+			text-align: center;
 			opacity: 1;
 		}
 
 		.scroll {
 			height: 100%;
 			box-sizing: border-box;
-			// padding-bottom: 90rpx;
-			// background-color: pink;
+			
 		}
 	}
 </style>

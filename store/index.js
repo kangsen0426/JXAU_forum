@@ -3,6 +3,8 @@ import Vuex from 'vuex'
 Vue.use(Vuex)
 const store = new Vuex.Store({
 	state: {
+		
+		currentSelect:'',
 
 		tabBarlist: [{
 			pagePath: "/pages/index/index",
@@ -48,10 +50,15 @@ const store = new Vuex.Store({
 	getters: {
 		getTabBar(state) {
 			return state.tabBarlist
+		},
+		getCurrentSelect(state){
+			return state.currentSelect
 		}
 	},
 	mutations: {
-
+		changeCurrentSelect(state,name){
+			state.currentSelect = name
+		}
 	},
 	actions: {
 

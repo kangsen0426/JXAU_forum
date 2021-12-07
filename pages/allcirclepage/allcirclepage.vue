@@ -5,7 +5,9 @@
 		<u-navbar back-icon-color="#5098FF" title="所有圈子"></u-navbar>
 
 		<view class="slot-wrap">
-			<u-search class="index_search" @clear="showcreateCircle" @blur="showcreateCircle" @focus="hiddlecreateCircle" @search="startSearch" @custom="creatCircle" :clearabled="true" v-model="search" placeholder="搜索圈子" :show-action="action" action-text="建圈"></u-search>
+			<u-search class="index_search" @clear="showcreateCircle" @blur="showcreateCircle"
+				@focus="hiddlecreateCircle" @search="startSearch" @custom="creatCircle" :clearabled="true"
+				v-model="search" placeholder="搜索圈子" :show-action="action" action-text="建圈"></u-search>
 		</view>
 
 
@@ -37,6 +39,8 @@
 									</view>
 									<view class="info">86条动态 | 346位校友关注</view>
 									<view class="desc">简介:{{item1.name}}</view>
+									<view class="selectBtn" v-if="showselectBtn" @click.stop="chooseCircle(item1)">选择
+									</view>
 								</view>
 								<!-- <view class="item-menu-name">{{item1.name}}</view> -->
 							</view>
@@ -52,6 +56,10 @@
 
 <script>
 	import classifyData from '@/testData/classify.data.js';
+
+	import {
+		mapMutations
+	} from "vuex"
 
 
 	export default {
@@ -69,30 +77,46 @@
 				scrollRightTop: 0, // 右边栏目scroll-view的滚动条高度
 				timer: null, // 定时器
 				search: '',
-				action:true
+				action: true,
+				showselectBtn: false
 
 			}
 		},
-		onLoad() {
+		onLoad(option) {
 
+			console.log(option.type)
+
+			if (option.type) {
+				this.showselectBtn = true
+			}
 		},
 		onReady() {
 			this.getMenuItemTop()
 		},
 		methods: {
-			hiddlecreateCircle(){
+			...mapMutations(['changeCurrentSelect']),
+			chooseCircle(item) {
+				
+				this.changeCurrentSelect(item.name)
+				
+				uni.navigateBack({
+					delta:1
+				})
+
+			},
+			hiddlecreateCircle() {
 				//隐藏建圈
 				this.action = false
 			},
-			showcreateCircle(){
+			showcreateCircle() {
 				//显示建圈
 				this.action = true
 			},
-			startSearch(){
+			startSearch() {
 				//搜索
 				console.log(this.search)
 			},
-			creatCircle(){
+			creatCircle() {
 				console.log("建圈")
 			},
 			tocircle(item) {
@@ -342,6 +366,7 @@
 					display: flex;
 					flex-wrap: wrap;
 					padding-left: 10rpx;
+					position: relative;
 					// background-color: pink;
 
 					.name {
@@ -350,8 +375,8 @@
 						align-items: center;
 						font-size: 28rpx;
 						font-weight: bold;
-						
-						i{
+
+						i {
 							font-size: 28rpx;
 							margin-right: 8rpx;
 							color: #5098FF;
@@ -368,6 +393,17 @@
 						width: 100%;
 						font-size: 24rpx;
 						color: #c7c7c7;
+					}
+
+					.selectBtn {
+						position: absolute;
+						right: 0;
+						top: 30rpx;
+						padding: 10rpx;
+						font-size: 26rpx;
+						background-color: #5098FF;
+						color: #fff;
+						border-radius: 20rpx;
 					}
 				}
 			}

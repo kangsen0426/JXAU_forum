@@ -9,24 +9,27 @@
 					{{list.username}}
 				</view>
 				<view class="badge">
-					<i class="iconfont icon-guanliyuan_guanliyuanliebiao"></i>
+					<i v-if="list.badge" class="iconfont icon-guanliyuan_guanliyuanliebiao"></i>
 				</view>
 			</view>
 			<view class="right">
 				<view class="button_wrap">
 					<view class="button" @click="togglefolow">
 						<u-icon v-if="list.following" name="checkbox-mark"></u-icon>
-						{{list.following ? '已关注' : '关注'}}
+						{{isfollow ? '已关注' : '关注'}}
 					</view>
 				</view>
 				<view class="more_option" @click="showoptions">
 					<i class="iconfont icon-xianxingtubiaozhizuomoban-25"></i>
 				</view>
+				
+				<view :class="[list.type ? 'type type2' : 'type']" v-if="list.circle === '失物招领'">{{list.type ? '找失主' : '找拾主'}}</view>
 			</view>
 		</view>
 		<view class="diary_content" @click="toContentDetail">
 			<view class="text_area">
-				<u-read-more v-if="!detailpage" :show-height="200" :toggle="true" text-indent="0" :shadow-style="shadowStyle">
+				<u-read-more v-if="!detailpage" :show-height="200" :toggle="true" text-indent="0"
+					:shadow-style="shadowStyle">
 					<rich-text :nodes="list.content"></rich-text>
 				</u-read-more>
 				{{detailpage ? list.content : ''}}
@@ -34,14 +37,15 @@
 			<view class="image_box">
 
 				<!-- //部分展示 -->
-				<view v-if="!detailpage && index < 5" :class="['outer_box',list.imgArray.length === 1 ? 'outer_box_onlyone' : '']"
+				<view v-if="!detailpage && index < 5"
+					:class="['outer_box',list.imgArray.length === 1 ? 'outer_box_onlyone' : '']"
 					v-for="(item,index) in list.imgArray" :key="index" @click.stop="previewimg(index)">
 					<u-image :src="item" height="100%"></u-image>
 				</view>
 				<view v-if="!detailpage && list.imgArray.length >= 6" class="outer_box_verymore">
 					+{{list.imgArray.length - 5}}
 				</view>
-				
+
 				<!-- 全部展示 -->
 				<view v-if="detailpage" :class="['outer_box',list.imgArray.length === 1 ? 'outer_box_onlyone' : '']"
 					v-for="(item,index) in list.imgArray" :key="index" @click.stop="previewimg(index)">
@@ -60,10 +64,11 @@
 					{{list.circle}}
 				</view>
 			</view>
+			
 			<view class="options">
 				<i class="iconfont icon-fenxiang"></i>
 				<i class="iconfont icon-xiaoxi midle"><span>{{list.comments}}</span></i>
-				<i class="iconfont icon-xihuan1" @click="togglelike"></i>
+				<i :class="['iconfont',islike ? 'icon-xihuan2 like' : 'icon-xihuan1']" @click="togglelike"></i>
 			</view>
 		</view>
 
@@ -95,7 +100,9 @@
 					backgroundImage: "linear-gradient(-180deg, rgba(255, 255, 255, 0) 0%, #fff 80%)",
 					paddingTop: "160rpx",
 					marginTop: "-160rpx"
-				}
+				},
+				islike: false,
+				isfollow: false
 
 			};
 		},
@@ -109,9 +116,13 @@
 			},
 			togglelike() {
 				this.$emit('togglelike', this.list.id)
+
+				this.islike = !this.islike
 			},
 			togglefolow() {
 				this.$emit('togglefolow', this.list.userid)
+
+				this.isfollow = !this.isfollow
 			},
 			showoptions() {
 				this.popupshow = true
@@ -193,6 +204,23 @@
 				display: flex;
 				align-items: center;
 				justify-content: space-between;
+				position: relative;
+				.type {
+				
+					position: absolute;
+					top: 100rpx;
+					right: 0;
+					transform: rotateZ(40deg);
+					padding: 20rpx;
+					z-index: 999;
+					color: #fff;
+					border-radius: 40rpx;
+					background-color: orange;
+				}
+				
+				.type2{
+					background-color: #5098FF;
+				}
 
 				.button_wrap {
 					width: 60%;
@@ -324,6 +352,10 @@
 				i {
 					padding: 0 30rpx;
 					font-size: 42rpx;
+				}
+
+				.like {
+					color: red;
 				}
 
 				.midle {

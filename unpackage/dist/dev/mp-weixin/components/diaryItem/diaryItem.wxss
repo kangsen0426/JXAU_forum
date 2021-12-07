@@ -62,6 +62,22 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+  position: relative;
+}
+.daily_wrap .top_wrap .right .type.data-v-4d09ba9c {
+  position: absolute;
+  top: 100rpx;
+  right: 0;
+  -webkit-transform: rotateZ(40deg);
+          transform: rotateZ(40deg);
+  padding: 20rpx;
+  z-index: 999;
+  color: #fff;
+  border-radius: 40rpx;
+  background-color: orange;
+}
+.daily_wrap .top_wrap .right .type2.data-v-4d09ba9c {
+  background-color: #5098FF;
 }
 .daily_wrap .top_wrap .right .button_wrap.data-v-4d09ba9c {
   width: 60%;
@@ -158,6 +174,9 @@
 .daily_wrap .bottom .options ._i.data-v-4d09ba9c {
   padding: 0 30rpx;
   font-size: 42rpx;
+}
+.daily_wrap .bottom .options .like.data-v-4d09ba9c {
+  color: red;
 }
 .daily_wrap .bottom .options .midle.data-v-4d09ba9c {
   padding-right: 15rpx;

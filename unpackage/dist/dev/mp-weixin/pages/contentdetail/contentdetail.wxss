@@ -82,4 +82,26 @@ page .content .fake_inp {
   padding: 10rpx;
   height: 100rpx;
 }
+.replyBox .item_reply {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 30rpx;
+  padding: 20rpx;
+  background-color: rgba(185, 185, 185, 0.1);
+}
+.replyBox .item_reply .left {
+  width: 90rpx;
+  height: 90rpx;
+}
+.replyBox .item_reply .right {
+  width: calc(100% - 160rpx);
+}
+.replyBox .item_reply .right ._span {
+  font-weight: bold;
+}
+.replyBox .item_reply .like {
+  color: red;
+}
 

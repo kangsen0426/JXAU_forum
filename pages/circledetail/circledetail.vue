@@ -11,17 +11,25 @@
 		<view class="main">
 			<scroll-view scroll-y="true" style="height: 100%;">
 				<view class="top_img_wrap">
-					<u-image width="100%" height="100%"
-						src="https://ksimagebed.oss-cn-hangzhou.aliyuncs.com/imgbed/2021-11-21-11%3A37%3A19b3fc7646cfcfe4286d7913b7b2639d93.jpg">
+					<u-image v-if="!this.one" width="100%" height="100%"
+						src="https://s3.bmp.ovh/imgs/2021/12/2c322103376e6764.jpg">
 					</u-image>
+					<u-image v-else width="100%" height="100%"
+						src="https://s3.bmp.ovh/imgs/2021/12/2dd10543de138a80.jpg">
+					</u-image>
+
 				</view>
 				<view class="info_wrap">
 					<view class="top_box">
 						<view class="left_img">
 							<view class="image">
-								<u-image width="170rpx" height="170rpx"
-									src="https://ksimagebed.oss-cn-hangzhou.aliyuncs.com/imgbed/2021-11-21-11%3A37%3A19b3fc7646cfcfe4286d7913b7b2639d93.jpg"
-									border-radius="50%"></u-image>
+								<u-image v-if="!this.one" width="170rpx" height="170rpx" border-radius="50%"
+									src="https://s3.bmp.ovh/imgs/2021/12/2c322103376e6764.jpg">
+								</u-image>
+								<u-image v-else width="170rpx" height="170rpx" border-radius="50%"
+									src="https://s3.bmp.ovh/imgs/2021/12/2dd10543de138a80.jpg">
+								</u-image>
+								
 							</view>
 						</view>
 						<view class="right_info">
@@ -32,10 +40,10 @@
 						</view>
 					</view>
 					<view class="desc_box">
-						<view class="title">失物招领</view>
+						<view class="title">{{circle}}</view>
 						<view class="desc">
 							<span>简介</span>
-							谁的东西被我捡了
+							{{this.one ? '美食聚集地~' : '谁的东西被我捡了'}}
 						</view>
 					</view>
 					<view class="circle_member">
@@ -111,47 +119,11 @@
 				circleID: '',
 				circle: '',
 				membershow: false,
-				listData: [{
-						id: 12121,
-						name: "ks",
-						imgUrl: "https://s3.bmp.ovh/imgs/2021/11/91650c5bd05e52d2.jpg"
-					},
-					{
-						id: 1221,
-						name: "ks",
-						imgUrl: "https://s3.bmp.ovh/imgs/2021/11/12628cf8aa4a62c7.jpg"
-					},
-					{
-						id: 1211,
-						name: "案说法哈佛爱上了发给你按键",
-						imgUrl: "https://s3.bmp.ovh/imgs/2021/11/e2598f87131a75db.png"
-					},
-					{
-						id: 1821,
-						name: "ks",
-						imgUrl: "https://s3.bmp.ovh/imgs/2021/11/6deded1a6fb9c0f9.png"
-					},
-					{
-						id: 1212,
-						name: "ks",
-						imgUrl: "https://s3.bmp.ovh/imgs/2021/11/91650c5bd05e52d2.jpg"
-					},
-					{
-						id: 121,
-						name: "ks",
-						imgUrl: "https://s3.bmp.ovh/imgs/2021/11/12628cf8aa4a62c7.jpg"
-					},
-					{
-						id: 12151,
-						name: "案说法哈佛爱上了发给你按键",
-						imgUrl: "https://s3.bmp.ovh/imgs/2021/11/e2598f87131a75db.png"
-					},
-					{
-						id: 1721,
-						name: "ks",
-						imgUrl: "https://s3.bmp.ovh/imgs/2021/11/6deded1a6fb9c0f9.png"
-					}
-				],
+				circleDate: [{
+					bg: 'https://s3.bmp.ovh/imgs/2021/12/2c322103376e6764.jpg'
+				}],
+				one: false,
+				listData: [],
 				tabslist: {
 					list: [{
 							name: "热门"
@@ -162,7 +134,212 @@
 					],
 					current: 0
 				},
-				tabsListData: [{
+				tabsListData: []
+			}
+		},
+		onLoad(option) {
+			this.circleID = option.id
+			this.circle = option.name
+
+			console.log(this.circleID)
+
+			if (this.circleID == 333) {
+				this.one = true
+
+				this.listData = [
+
+					{
+						id: 121,
+						name: "test",
+						imgUrl: "https://s3.bmp.ovh/imgs/2021/11/12628cf8aa4a62c7.jpg"
+					},
+					{
+						id: 12151,
+						name: "只能这样",
+						imgUrl: "https://ftp.bmp.ovh/imgs/2021/12/e5f689c36806676e.jpg"
+					},
+					{
+						id: 1721,
+						name: "呃呃呃",
+						imgUrl: "https://s3.bmp.ovh/imgs/2021/12/da018a3f3d1d1864.jpg"
+					},
+					{
+						id: 1771,
+						name: "哼哼",
+						imgUrl: "https://s3.bmp.ovh/imgs/2021/11/6deded1a6fb9c0f9.png"
+					},
+					{
+						id: 12121,
+						name: "ks",
+						imgUrl: "https://s3.bmp.ovh/imgs/2021/11/91650c5bd05e52d2.jpg"
+					},
+					{
+						id: 1221,
+						name: "呵呵哒",
+						imgUrl: "https://s3.bmp.ovh/imgs/2021/11/12628cf8aa4a62c7.jpg"
+					},
+					{
+						id: 1211,
+						name: "案说法哈佛爱上了发给你按键",
+						imgUrl: "https://s3.bmp.ovh/imgs/2021/11/e2598f87131a75db.png"
+					},
+					{
+						id: 1821,
+						name: "一只牛",
+						imgUrl: "https://i.bmp.ovh/imgs/2021/12/8b88ef4402ca6c9a.jpg"
+					},
+					{
+						id: 1212,
+						name: "我没掉东西",
+						imgUrl: "https://s3.bmp.ovh/imgs/2021/12/2bde20cb05be511c.jpg"
+					}
+				]
+
+				this.tabsListData = [{
+						name: '热门',
+						id: 822,
+						list: [{
+								id: 2707,
+								userid: 6347,
+								username: "小耶",
+								following: false,
+								collect: false,
+								circle: '美食',
+								circleid: 81413,
+								comments: 0,
+								commentsData: [],
+								location: {
+									longitude: 115.8587658,
+									latitude: 28.7591635,
+								},
+								avatar: "http://ksimagebed.oss-cn-hangzhou.aliyuncs.com/imgbed/2021-12-6-20%3A23%3A13-3d5be1e1efc0fa750b478a7f277f8118.jpg",
+								content: "简简单单吃一顿",
+								imgArray: [
+									"http://ksimagebed.oss-cn-hangzhou.aliyuncs.com/imgbed/2021-12-6-20%3A24%3A37-734c8c0e329f19733034894c2d1b975a.jpg",
+									"http://ksimagebed.oss-cn-hangzhou.aliyuncs.com/imgbed/2021-12-6-20%3A24%3A37-8714ff1bec9208a40d510dfdb24f605e.jpg"
+								]
+							},
+							{
+								id: 8777,
+								userid: 6347,
+								username: "卤味好吃",
+								following: false,
+								collect: false,
+								circle: '美食',
+								circleid: 81413,
+								comments: 0,
+								commentsData: [],
+								location: {
+									longitude: 115.8587658,
+									latitude: 28.7591635,
+								},
+								avatar: "http://ksimagebed.oss-cn-hangzhou.aliyuncs.com/imgbed/2021-12-6-20%3A28%3A48-679ea5b2ff5d3d4e143733f1bf392e02.jpg",
+								content: "大甲鱼造一个",
+								imgArray: [
+									"http://ksimagebed.oss-cn-hangzhou.aliyuncs.com/imgbed/2021-12-6-20%3A27%3A49-fc700349a369b4b9ca57f6a05279b5ed.jpg"
+								]
+							},
+							{
+								id: 333,
+								userid: 6347,
+								username: "一拳超人",
+								following: false,
+								collect: false,
+								circle: '美食',
+								circleid: 333,
+								comments: 5,
+								commentsData: [],
+								location: {
+									longitude: 115.8587658,
+									latitude: 28.7591635,
+								},
+								avatar: "http://ksimagebed.oss-cn-hangzhou.aliyuncs.com/imgbed/2021-12-6-19%3A59%3A37-deb384f94227cc5fb817d5dccf142ed0.jpg",
+								content: "这个鹅味道不错",
+								imgArray: [
+									"http://ksimagebed.oss-cn-hangzhou.aliyuncs.com/imgbed/2021-12-6-19%3A57%3A18-916caa22b9ed583ce2026d8dde736cfc.jpg",
+									"http://ksimagebed.oss-cn-hangzhou.aliyuncs.com/imgbed/2021-12-6-19%3A57%3A46-83437f0a8cd19167b05ceb7e29ecc351.jpg",
+									"http://ksimagebed.oss-cn-hangzhou.aliyuncs.com/imgbed/2021-12-6-19%3A58%3A19-04689e196f19ced688678607567a988b.jpg"
+
+								]
+							},
+						]
+					},
+					{
+						name: '关注',
+						id: 366,
+						list: [{
+							id: 561,
+							userid: 7821,
+							username: "ksks",
+							following: false,
+							collect: false,
+							circle: '失物招领',
+							circleid: 8113,
+							comments: 3,
+							commentsData: [],
+							location: {
+								longitude: 115.8587658,
+								latitude: 28.7591635,
+							},
+							avatar: "https://s3.bmp.ovh/imgs/2021/11/f0007619e29465d0.jpg",
+							content: "今天在操场捡到10块钱",
+							imgArray: [
+								"https://s3.bmp.ovh/imgs/2021/12/5133088b2bf4714b.jpg"
+							]
+						}]
+					}
+				]
+
+			} else {
+
+				this.listData = [{
+						id: 12121,
+						name: "ks",
+						imgUrl: "https://s3.bmp.ovh/imgs/2021/11/91650c5bd05e52d2.jpg"
+					},
+					{
+						id: 1221,
+						name: "呵呵哒",
+						imgUrl: "https://s3.bmp.ovh/imgs/2021/11/12628cf8aa4a62c7.jpg"
+					},
+					{
+						id: 1211,
+						name: "案说法哈佛爱上了发给你按键",
+						imgUrl: "https://s3.bmp.ovh/imgs/2021/11/e2598f87131a75db.png"
+					},
+					{
+						id: 1821,
+						name: "一只牛",
+						imgUrl: "https://i.bmp.ovh/imgs/2021/12/8b88ef4402ca6c9a.jpg"
+					},
+					{
+						id: 1212,
+						name: "我没掉东西",
+						imgUrl: "https://s3.bmp.ovh/imgs/2021/12/2bde20cb05be511c.jpg"
+					},
+					{
+						id: 121,
+						name: "test",
+						imgUrl: "https://s3.bmp.ovh/imgs/2021/11/12628cf8aa4a62c7.jpg"
+					},
+					{
+						id: 12151,
+						name: "只能这样",
+						imgUrl: "https://ftp.bmp.ovh/imgs/2021/12/e5f689c36806676e.jpg"
+					},
+					{
+						id: 1721,
+						name: "呃呃呃",
+						imgUrl: "https://s3.bmp.ovh/imgs/2021/12/da018a3f3d1d1864.jpg"
+					},
+					{
+						id: 1771,
+						name: "哼哼",
+						imgUrl: "https://s3.bmp.ovh/imgs/2021/11/6deded1a6fb9c0f9.png"
+					}
+				]
+
+				this.tabsListData = [{
 						name: '热门',
 						id: 822,
 						list: [{
@@ -171,46 +348,62 @@
 								username: "ksks",
 								following: false,
 								collect: false,
-								circle: '美食',
+								circle: '失物招领',
+								type:0,
 								circleid: 8113,
-								comments: 23,
+								comments: 3,
 								commentsData: [],
 								location: {
 									longitude: 115.8587658,
 									latitude: 28.7591635,
 								},
 								avatar: "https://s3.bmp.ovh/imgs/2021/11/f0007619e29465d0.jpg",
-								badge: [],
-								content: "范家发为范家发为比办公空间不可被概括为对的范家发为比办对的范家发为比办对的范家发为比办对的范公空间不可被概括为比办公空范家发为范家发为比办公空间不可被概括为对的范家发为比办对的范家发为比办对的范家发为比办对的范公空间不可被概括为比办公空间不可被概括为间不可被概括为",
+								content: "今天在操场掉了10块钱",
 								imgArray: [
-									"https://s3.bmp.ovh/imgs/2021/11/91650c5bd05e52d2.jpg",
-									"https://s3.bmp.ovh/imgs/2021/11/12628cf8aa4a62c7.jpg",
-									"https://s3.bmp.ovh/imgs/2021/11/e2598f87131a75db.png",
-									"https://s3.bmp.ovh/imgs/2021/11/6deded1a6fb9c0f9.png",
-									"https://s3.bmp.ovh/imgs/2021/11/f0007619e29465d0.jpg",
-									"https://s3.bmp.ovh/imgs/2021/11/ead26623c4006561.jpg",
-									"https://s3.bmp.ovh/imgs/2021/11/bf8fffd2a4f239ef.jpg"
+									"https://s3.bmp.ovh/imgs/2021/12/5133088b2bf4714b.jpg"
 								]
 							},
 							{
 								id: 684,
 								userid: 6347,
-								username: "ksks",
+								username: "一只牛",
 								following: false,
 								collect: false,
-								circle: '美食',
+								circle: '失物招领',
+								type:1,
 								circleid: 81413,
-								comments: 23,
+								comments: 6,
 								commentsData: [],
 								location: {
 									longitude: 115.8587658,
 									latitude: 28.7591635,
 								},
-								avatar: "https://s3.bmp.ovh/imgs/2021/11/f0007619e29465d0.jpg",
-								badge: [],
-								content: "范家发为范家发为比办公空间不可被概括为对的范家发为比办对的范家发为比办对的范家发为比办对的范公空间不可被概括为比办公空间不可被概括为",
+								avatar: "https://i.bmp.ovh/imgs/2021/12/8b88ef4402ca6c9a.jpg",
+								content: "水卡两张",
 								imgArray: [
-									"https://s3.bmp.ovh/imgs/2021/11/f0007619e29465d0.jpg"
+									"https://s3.bmp.ovh/imgs/2021/12/4541fde96bdb8d5b.jpg",
+									"https://s3.bmp.ovh/imgs/2021/12/dd4ebac573649d8b.jpg"
+								]
+							},
+							{
+								id: 6724,
+								userid: 6347,
+								username: "呃呃呃",
+								following: false,
+								collect: false,
+								circle: '失物招领',
+								type:0,
+								circleid: 81413,
+								comments: 6,
+								commentsData: [],
+								location: {
+									longitude: 115.8587658,
+									latitude: 28.7591635,
+								},
+								avatar: "https://s3.bmp.ovh/imgs/2021/12/da018a3f3d1d1864.jpg",
+								content: "我的衣服有人看到了吗",
+								imgArray: [
+									"https://s3.bmp.ovh/imgs/2021/12/ba2bf9c14908f731.jpg"
 								]
 							}
 
@@ -220,33 +413,29 @@
 						name: '关注',
 						id: 366,
 						list: [{
-							id: 684,
-							userid: 6347,
+							id: 561,
+							userid: 7821,
 							username: "ksks",
 							following: false,
 							collect: false,
-							circle: '美食',
-							circleid: 81413,
-							comments: 23,
+							circle: '失物招领',
+							type:0,
+							circleid: 8113,
+							comments: 3,
 							commentsData: [],
 							location: {
 								longitude: 115.8587658,
 								latitude: 28.7591635,
 							},
 							avatar: "https://s3.bmp.ovh/imgs/2021/11/f0007619e29465d0.jpg",
-							badge: [],
-							content: "范家发为范家发为比办公空间不可被概括为对的范家发为比办对的范家发为比办对的范家发为比办对的范公空间不可被概括为比办公空间不可被概括为",
+							content: "今天在操场捡到10块钱",
 							imgArray: [
-								"https://s3.bmp.ovh/imgs/2021/11/f0007619e29465d0.jpg"
+								"https://s3.bmp.ovh/imgs/2021/12/5133088b2bf4714b.jpg"
 							]
 						}]
 					}
-				],
+				]
 			}
-		},
-		onLoad(option) {
-			this.circleID = option.id
-			this.circle = option.name
 		},
 		methods: {
 			showAllmember() {

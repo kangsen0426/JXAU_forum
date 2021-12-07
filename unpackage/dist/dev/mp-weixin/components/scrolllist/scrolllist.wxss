@@ -39,6 +39,7 @@
 }
 .scrolllist_wrap .isloading.data-v-75ab32e4 {
   height: 45rpx;
+  text-align: center;
   opacity: 1;
 }
 .scrolllist_wrap .scroll.data-v-75ab32e4 {
